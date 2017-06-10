@@ -1,0 +1,119 @@
+html {
+  font-family: 'Roboto', sans-serif;
+  color: #6b6b6b;
+  font-size: 14px; }
+
+body {
+  background: #e0e0e0; }
+
+div {
+  box-sizing: border-box; }
+
+p {
+  line-height: 1.5; }
+
+ul {
+  margin: 0 0 10px 20px;
+  padding: 0; }
+
+.header {
+  display: flex;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.27);
+  background: #f3f3f3;
+  height: 46px;
+  position: relative;
+  z-index: 999; }
+
+.logo {
+  padding: 15px;
+  width: 200px; }
+
+.search {
+  padding: 15px; }
+
+.simple-nav {
+  padding: 0;
+  margin: 0 0 0 auto;
+  overflow: auto;
+  list-style: none; }
+  .simple-nav li {
+    float: left;
+    padding: 15px; }
+
+.user-profile p {
+  margin: 0;
+  line-height: 1;
+  padding: 15px; }
+
+.leftnav {
+  width: 200px;
+  background: #32414a;
+  box-shadow: 1px 0px 2px rgba(0, 0, 0, 0.27);
+  height: calc(100vh - 46px);
+  position: relative;
+  z-index: 998; }
+  .leftnav ul {
+    margin: 0;
+    list-style: none;
+    padding: 10px 15px; }
+    .leftnav ul li {
+      padding: 10px 5px;
+      color: #FFF; }
+
+svg path {
+  fill: #FFF; }
+
+.main-container {
+  background: #e6e6e6;
+  display: flex;
+  background: #f3f3f3;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.27); }
+  .main-container p {
+    margin: 0 0 10px;
+    font-size: 13px; }
+  .main-container ul {
+    font-size: 13px; }
+    .main-container ul li {
+      padding: 2px 0; }
+  .main-container .leftside {
+    width: 250px;
+    padding: 10px;
+    background: #e6e6e6;
+    border-right: 1px solid #DDD; }
+    .main-container .leftside img {
+      width: 100%;
+      height: auto;
+      display: block; }
+    .main-container .leftside .readnow {
+      display: block;
+      text-align: center;
+      text-decoration: none;
+      background: #54a575;
+      color: #FFF;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 5px;
+      font-size: 16px; }
+  .main-container .rightside {
+    width: calc(100% - 250px);
+    padding: 10px; }
+    .main-container .rightside h1 {
+      font-weight: 300;
+      margin: 0 0 10px;
+      border-bottom: 1px solid #DDD;
+      padding: 5px 0; }
+    .main-container .rightside h3 {
+      margin: 0 0 5px;
+      font-weight: 500;
+      font-size: 14px;
+      color: #5889a7; }
+    .main-container .rightside .split-two {
+      display: flex; }
+      .main-container .rightside .split-two div {
+        width: 50%;
+        padding: 5px 10px; }
+
+.content-with-nav {
+  display: flex; }
+  .content-with-nav .main-container {
+    width: calc(100% - 200px); }

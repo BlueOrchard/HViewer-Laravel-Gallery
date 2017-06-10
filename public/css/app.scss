@@ -1,0 +1,185 @@
+$padding: 10px;
+$margin: 10px;
+$paddingHead: 15px;
+
+$containerShadow: 0px 1px 2px rgba(0, 0, 0, 0.27);
+$rightOrientContainerShadow: 1px 0px 2px rgba(0, 0, 0, 0.27);
+
+$containerBg: #f3f3f3;
+$mainBg: #e6e6e6;
+$leftBg: #e6e6e6;
+$darkContainerBg: #32414a;
+
+$mainColor: #6b6b6b;
+$smallHeadingColor: #5889a7;;
+$linkColor: #040404;
+
+$headerHeight: 46px;
+$navWidth: 200px;
+$leftWidth: 250px;
+
+html{
+    font-family: 'Roboto', sans-serif;
+    color: $mainColor;
+    font-size: 14px;
+}
+
+body{
+    background: #e0e0e0;
+}
+
+div{
+    box-sizing: border-box;
+}
+
+p{
+    line-height: 1.5;
+}
+
+ul{
+    margin: 0 0 10px 20px;
+    padding: 0;
+}
+
+.header{
+    display: flex;
+    box-shadow: $containerShadow;
+    background: $containerBg;
+    height: $headerHeight;
+    position: relative;
+    z-index: 999;
+}
+
+.logo{
+    padding: $paddingHead;
+    width: $navWidth;
+}
+
+.search{
+    padding: $paddingHead;
+}
+
+.simple-nav{
+    padding: 0;
+    margin: 0 0 0 auto;
+    overflow: auto;
+    list-style: none;
+
+    li{
+        float: left;
+        padding: $paddingHead;
+    }
+}
+
+.user-profile{
+    p{
+        margin: 0;
+        line-height: 1;
+        padding: $paddingHead;
+    }
+}
+
+.leftnav{
+    width: $navWidth;
+    background: $darkContainerBg;
+    box-shadow: $rightOrientContainerShadow;
+    height: calc(100vh - #{$headerHeight});
+    position: relative;
+    z-index: 998;
+
+    ul{
+        margin: 0;
+        list-style: none;
+        padding: 10px 15px;
+
+        li {
+            padding: 10px 5px;
+            color: #FFF;
+        }
+    }
+}
+
+svg path{
+    fill: #FFF;
+}
+
+.main-container{
+    background: $mainBg;
+    display: flex;
+    background: $containerBg;
+    box-shadow: $containerShadow;
+
+    p{
+        margin: 0 0 10px;
+        font-size: 13px;
+    }
+
+    ul{
+        font-size: 13px;
+
+        li{
+            padding: 2px 0;
+        }
+    }
+
+    .leftside{
+        width: $leftWidth;
+        padding: $padding;
+        background: $leftBg;
+        border-right: 1px solid #DDD;
+
+        img{
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .readnow{
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            background: #54a575;
+            color: #FFF;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+    }
+
+    .rightside{
+        width: calc(100% - #{$leftWidth});
+        padding: $padding;
+
+        h1{
+            font-weight: 300;
+            margin: 0 0 10px;
+            border-bottom: 1px solid #DDD;
+            padding: 5px 0;
+        }
+
+        h3{
+            margin: 0 0 5px;
+            font-weight: 500;
+            font-size: 14px;
+            color: $smallHeadingColor;
+        }
+
+        .split-two{
+            display: flex;
+            
+            div{
+                width: 50%;
+                padding: 5px 10px;
+            }
+        }
+    }
+}
+
+.content-with-nav{
+    display: flex;
+
+    .main-container{
+        width: calc(100% - #{$navWidth})
+    }
+}
