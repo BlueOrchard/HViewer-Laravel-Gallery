@@ -5,10 +5,9 @@
     <div class="search">
         Search Form Here
     </div>
-    <ul class="simple-nav">
-        <li>Browse</li>
-        <li>Categories</li>
-    </ul>
+    <div class="simple-nav">
+        <span class="mdi mdi-view-carousel"></span>
+    </div>
     <div class="user-profile">
         <p>Your Profile</p>
     </div>

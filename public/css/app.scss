@@ -15,7 +15,7 @@ $smallHeadingColor: #5889a7;;
 $linkColor: #040404;
 
 $headerHeight: 46px;
-$navWidth: 200px;
+$navWidth: 95px;
 $leftWidth: 250px;
 
 html{
@@ -60,14 +60,15 @@ ul{
 }
 
 .simple-nav{
-    padding: 0;
+    padding: $padding;
     margin: 0 0 0 auto;
-    overflow: auto;
+    overflow: hidden;
     list-style: none;
+    font-size: 25px;
 
-    li{
-        float: left;
-        padding: $paddingHead;
+    span{
+        display: block;
+        margin-top: -1px;
     }
 }
 
@@ -95,6 +96,14 @@ ul{
         li {
             padding: 10px 5px;
             color: #FFF;
+            font-size: 13px;
+            text-align: center;
+
+            span{
+                display: block;
+                font-size: 25px;
+                margin-bottom: 2px;
+            }
         }
     }
 }
