@@ -88,13 +88,15 @@ ul {
       padding: 2px 0; }
   .main-container .leftside {
     width: 250px;
-    padding: 10px;
     background: #e6e6e6;
     border-right: 1px solid #DDD; }
     .main-container .leftside img {
       width: 100%;
       height: auto;
       display: block; }
+    .main-container .leftside .img-holder {
+      padding: 10px;
+      padding-bottom: 0; }
     .main-container .leftside .readnow {
       display: block;
       text-align: center;
@@ -104,7 +106,20 @@ ul {
       padding: 10px;
       margin-top: 10px;
       border-radius: 5px;
-      font-size: 16px; }
+      font-size: 16px;
+      margin: 10px; }
+    .main-container .leftside .mini-data {
+      overflow: auto;
+      display: flex;
+      padding: 10px;
+      border-top: 1px solid #DDD;
+      font-size: 13px; }
+      .main-container .leftside .mini-data span {
+        display: block;
+        width: 50%; }
+      .main-container .leftside .mini-data span:first-child {
+        font-weight: 500;
+        color: #5889a7; }
   .main-container .rightside {
     width: calc(100% - 250px);
     padding: 10px; }
@@ -118,11 +133,33 @@ ul {
       font-weight: 500;
       font-size: 14px;
       color: #5889a7; }
+    .main-container .rightside p {
+      margin-bottom: 20px; }
+    .main-container .rightside ul {
+      overflow: auto;
+      margin: 0 0 20px;
+      list-style: none; }
+    .main-container .rightside li {
+      width: 50%;
+      float: left; }
     .main-container .rightside .split-two {
       display: flex; }
-      .main-container .rightside .split-two div {
-        width: 50%;
-        padding: 5px 10px; }
+      .main-container .rightside .split-two .fifty-container {
+        padding: 5px 20px 5px 5px; }
+      .main-container .rightside .split-two .larger {
+        width: 75%; }
+      .main-container .rightside .split-two .smaller {
+        width: 25%; }
+    .main-container .rightside .related {
+      display: flex;
+      justify-content: space-between;
+      width: 100%; }
+      .main-container .rightside .related div {
+        display: block;
+        padding: 5px 3px 0; }
+        .main-container .rightside .related div img {
+          width: 100%;
+          height: auto; }
 
 .content-with-nav {
   overflow: auto;
@@ -130,3 +167,7 @@ ul {
   margin-top: 46px; }
   .content-with-nav .main-container {
     width: 100%; }
+
+.footer {
+  background: #32414a;
+  min-height: 300px; }

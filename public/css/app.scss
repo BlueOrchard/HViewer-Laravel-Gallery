@@ -136,7 +136,6 @@ ul{
 
     .leftside{
         width: $leftWidth;
-        padding: $padding;
         background: $leftBg;
         border-right: 1px solid #DDD;
 
@@ -144,6 +143,11 @@ ul{
             width: 100%;
             height: auto;
             display: block;
+        }
+
+        .img-holder{
+            padding: $padding;
+            padding-bottom: 0;
         }
 
         .readnow{
@@ -156,6 +160,25 @@ ul{
             margin-top: 10px;
             border-radius: 5px;
             font-size: 16px;
+            margin: $margin;
+        }
+
+        .mini-data{
+            overflow: auto;
+            display: flex;
+            padding: $padding;
+            border-top: 1px solid #DDD;
+            font-size: 13px;
+
+            span{
+                display: block;
+                width: 50%;
+            }
+
+            span:first-child{
+                font-weight: 500;
+                color: $smallHeadingColor;
+            }
         }
     }
 
@@ -177,12 +200,50 @@ ul{
             color: $smallHeadingColor;
         }
 
+        p{
+            margin-bottom: 20px;
+        }
+
+        ul{
+            overflow: auto;
+            margin: 0 0 20px;
+            list-style: none;
+        }
+
+        li{
+            width: 50%;
+            float: left;
+        }
+
         .split-two{
             display: flex;
             
+            .fifty-container{
+                padding: 5px 20px 5px 5px;
+            }
+
+            .larger{
+                width: 75%;
+            }
+
+            .smaller{
+                width: 25%;
+            }
+        }
+
+        .related{
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+
             div{
-                width: 50%;
-                padding: 5px 10px;
+                display: block;
+                padding: 5px 3px 0;
+
+                img{
+                    width: 100%;
+                    height: auto;
+                }
             }
         }
     }
@@ -196,4 +257,9 @@ ul{
     .main-container{
         width: 100%;
     }
+}
+
+.footer{
+    background: $darkContainerBg;
+    min-height: 300px;
 }

@@ -19,8 +19,7 @@
         <div class="content-with-nav">
             @include('layout.leftnav')
             @include('templates.gallery-main')
+            @include('layout.footer')
         </div>
-
-        @include('layout.footer')
     </body>
 </html>
