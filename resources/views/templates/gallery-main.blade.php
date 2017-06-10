@@ -45,7 +45,7 @@
             <div class="fifty-container smaller">
                 <h3>Categories</h3>
                 <ul>
-                    @foreach($tags as $tag)
+                    @foreach($generalData->tags as $tag)
                         <li>{{ $tag }}</li>
                     @endforeach
                 </ul>

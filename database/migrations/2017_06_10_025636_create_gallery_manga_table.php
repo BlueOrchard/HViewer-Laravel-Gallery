@@ -16,7 +16,9 @@ class CreateGalleryMangaTable extends Migration
         Schema::create('gallery_items', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->string('slug');
             $table->text('description');
+            $table->text('tags');
             $table->timestamps();
         });
     }
