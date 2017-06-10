@@ -7,12 +7,12 @@
         </a>
     </div>
     <div class="rightside">
-        <h1>One Punch Man</h1>
+        <h1>{{ $generalData->name }}</h1>
         <div class="split-two">
             <div>
                 <h3>Description</h3>
-                <p>The seemingly ordinary and unimpressive Saitama has a rather unique hobby: being a hero. In order to pursue his childhood dream, he trained relentlessly for three years—and lost all of his hair in the process. Now, Saitama is incredibly powerful, so much so that no enemy is able to defeat him in battle. In fact, all it takes to defeat evildoers with just one punch has led to an unexpected problem—he is no longer able to enjoy the thrill of battling and has become quite bored.</p>
-            
+                <p>{{ $generalData->description }}</p>
+
                 <h3>Related</h3>
                 <p>Related Galleries Here</p>
             </div>

@@ -11,6 +11,4 @@
 |
 */
 
-Route::get('/', function () {
-    return view('main-description');
-});
+Route::get('manga/{id}', ['as' => 'mangaid', 'uses' => 'GalleryController@index']);
