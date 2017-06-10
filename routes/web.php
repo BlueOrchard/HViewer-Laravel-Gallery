@@ -12,3 +12,5 @@
 */
 
 Route::get('manga/{id}', ['as' => 'mangaid', 'uses' => 'GalleryController@index']);
+
+Route::get('manga-test', ['uses' => 'GalleryController@create']);
