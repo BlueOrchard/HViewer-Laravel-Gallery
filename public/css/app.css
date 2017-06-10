@@ -22,7 +22,11 @@ ul {
   background: #f3f3f3;
   height: 46px;
   position: relative;
-  z-index: 999; }
+  z-index: 999;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0; }
 
 .logo {
   padding: 15px;
@@ -52,7 +56,10 @@ ul {
   box-shadow: 1px 0px 2px rgba(0, 0, 0, 0.27);
   height: calc(100vh - 46px);
   position: relative;
-  z-index: 998; }
+  z-index: 998;
+  position: fixed;
+  left: 0;
+  bottom: 0; }
   .leftnav ul {
     margin: 0;
     list-style: none;
@@ -66,9 +73,6 @@ ul {
         display: block;
         font-size: 25px;
         margin-bottom: 2px; }
-
-svg path {
-  fill: #FFF; }
 
 .main-container {
   background: #e6e6e6;
@@ -121,6 +125,8 @@ svg path {
         padding: 5px 10px; }
 
 .content-with-nav {
-  display: flex; }
+  overflow: auto;
+  margin-left: 95px;
+  margin-top: 46px; }
   .content-with-nav .main-container {
-    width: calc(100% - 95px); }
+    width: 100%; }

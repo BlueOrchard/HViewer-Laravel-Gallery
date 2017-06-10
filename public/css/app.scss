@@ -48,6 +48,10 @@ ul{
     height: $headerHeight;
     position: relative;
     z-index: 999;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
 }
 
 .logo{
@@ -87,6 +91,9 @@ ul{
     height: calc(100vh - #{$headerHeight});
     position: relative;
     z-index: 998;
+    position: fixed;
+    left: 0;
+    bottom: 0;
 
     ul{
         margin: 0;
@@ -106,10 +113,6 @@ ul{
             }
         }
     }
-}
-
-svg path{
-    fill: #FFF;
 }
 
 .main-container{
@@ -186,9 +189,11 @@ svg path{
 }
 
 .content-with-nav{
-    display: flex;
+    overflow: auto;
+    margin-left: $navWidth;
+    margin-top: $headerHeight;
 
     .main-container{
-        width: calc(100% - #{$navWidth})
+        width: 100%;
     }
 }
