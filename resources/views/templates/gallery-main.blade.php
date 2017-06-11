@@ -25,21 +25,9 @@
 
                 <h3>Related</h3>
                 <div class="related">
-                    <div>
-                        <img class="related-img" src="http://placehold.it/381x600">
-                    </div>
-                    <div>
-                        <img class="related-img" src="http://placehold.it/381x600">
-                    </div>
-                    <div>
-                        <img class="related-img" src="http://placehold.it/381x600">
-                    </div>
-                    <div>
-                        <img class="related-img" src="http://placehold.it/381x600">
-                    </div>
-                    <div>
-                        <img class="related-img" src="http://placehold.it/381x600">
-                    </div>
+                    @foreach($relatedArray as $related)
+                        <div>{{ $related->name }}</div>
+                    @endforeach
                 </div>
             </div>
             <div class="fifty-container smaller">
