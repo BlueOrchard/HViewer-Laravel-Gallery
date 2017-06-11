@@ -16,4 +16,4 @@ Route::get('manga/{slug}/read', function(){
     echo 'TODO: Add Reading Controller/View';
 });
 
-Route::get('manga-test', ['uses' => 'GalleryController@create']);
+Route::get('add-manga', ['uses' => 'UploadGalleryController@index']);
