@@ -213,6 +213,15 @@ ul{
         li{
             width: 50%;
             float: left;
+            padding: 5px;
+            box-sizing: border-box;
+            transition: 0.25s all;
+            border-radius: 5px;
+            cursor: default;
+        }
+
+        li:hover{
+            background: #e8e8e8;
         }
 
         .split-two{

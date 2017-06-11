@@ -1,9 +1,9 @@
 <div class="main-container">
    <div class="leftside">
        <div class="img-holder">
-           <img src="https://myanimelist.cdn-dena.com/images/anime/7/72533l.jpg">
+           <img src="{{ $generalData->cover_photo }}">
        </div>
-       <a class="readnow" href="readnow">
+       <a class="readnow" href="{{ $generalData->slug }}/read">
            Read Now 
            <span class="mdi mdi-arrow-right"></span>
         </a>

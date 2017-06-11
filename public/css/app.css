@@ -141,7 +141,14 @@ ul {
       list-style: none; }
     .main-container .rightside li {
       width: 50%;
-      float: left; }
+      float: left;
+      padding: 5px;
+      box-sizing: border-box;
+      transition: 0.25s all;
+      border-radius: 5px;
+      cursor: default; }
+    .main-container .rightside li:hover {
+      background: #e8e8e8; }
     .main-container .rightside .split-two {
       display: flex; }
       .main-container .rightside .split-two .fifty-container {

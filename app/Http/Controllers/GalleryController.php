@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Gallery;
+use Image;
+use File;
 
 class GalleryController extends Controller
 {
@@ -31,16 +33,27 @@ class GalleryController extends Controller
     }
 
     public function create(){
+        $title = "One Punch Man Chapter 7";
+        $slug = str_slug($title, "-");
+
+        $path = "http://www.gstatic.com/tv/thumb/tvbanners/13132769/p13132769_b_v8_aa.jpg";
+        $filename = basename($path);
+        $fullpath = 'storage/images/' . $slug . '/cover/' . $filename;
+
+        File::makeDirectory('storage/images/' . $slug . '/cover/', 0775, true);
+        Image::make($path)->save(public_path($fullpath));
+
         $tags = ["Action", "Sci-Fi", "Comedy", "Parody", "Super Power", "Supernatural", "Seinen"];
         $artists = ["Murata, Yusuke", "ONE"];
         $languages = ["English"];
 
         $gallery = new Gallery;
 
-        $gallery->name = "One Punch Man Chapter 2";
-        $gallery->slug = str_slug("One Punch Man Chapter 2", "-");
+        $gallery->name = $title;
+        $gallery->slug = $slug;
         $gallery->series = "One Punch Man";
         $gallery->series_slug = str_slug("One Punch Man");
+        $gallery->cover_photo = '/'.$fullpath;
         $gallery->description = "The seemingly ordinary and unimpressive Saitama has a rather unique hobby: being a hero. In order to pursue his childhood dream, he trained relentlessly for three years—and lost all of his hair in the process. Now, Saitama is incredibly powerful, so much so that no enemy is able to defeat him in battle. In fact, all it takes to defeat evildoers with just one punch has led to an unexpected problem—he is no longer able to enjoy the thrill of battling and has become quite bored.";
         $gallery->tags = json_encode($tags);
         $gallery->artists = json_encode($artists);

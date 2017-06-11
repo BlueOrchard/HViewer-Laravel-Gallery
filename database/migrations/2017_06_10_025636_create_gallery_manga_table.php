@@ -19,6 +19,7 @@ class CreateGalleryMangaTable extends Migration
             $table->string('slug');
             $table->string('series');
             $table->string('series_slug');
+            $table->text('cover_photo');
             $table->text('description');
             $table->text('tags');
             $table->text('artists');
