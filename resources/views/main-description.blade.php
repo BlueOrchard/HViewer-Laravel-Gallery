@@ -15,7 +15,6 @@
     </head>
     <body>
         @include('layout.topnav')
-
         <div class="content-with-nav">
             @include('layout.leftnav')
             @include('templates.gallery-main')
