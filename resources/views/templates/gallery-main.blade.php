@@ -1,7 +1,7 @@
 <div class="main-container">
    <div class="leftside">
        <div class="img-holder">
-           <img src="{{ $generalData->cover_photo }}">
+           <img src="{{ $generalData->cover_photo_thumb }}">
        </div>
        <a class="readnow" href="{{ $generalData->slug }}/read">
            Read Now 
