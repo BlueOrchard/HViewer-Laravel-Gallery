@@ -1,7 +1,7 @@
 <div class="main-container">
    <div class="leftside">
        <div class="img-holder">
-           <img src="http://placehold.it/381x600">
+           <img src="https://myanimelist.cdn-dena.com/images/anime/7/72533l.jpg">
        </div>
        <a class="readnow" href="readnow">
            Read Now 
@@ -9,7 +9,7 @@
         </a>
         <div class="mini-data">
             <span>Pages</span>
-            <span>182</span>
+            <span>30</span>
         </div>
         <div class="mini-data">
             <span>Date Added</span>
@@ -23,10 +23,32 @@
                 <h3>Description</h3>
                 <p>{{ $generalData->description }}</p>
 
+                <h3>Preview</h3>
+                <div class="preview">
+                    <div>
+                        <img src="http://mangaleader.com/mangas/one-punch-man/62/22.jpg?v=f">
+                    </div>
+                    <div>
+                        <img src="http://mangaleader.com/mangas/one-punch-man/62/22.jpg?v=f">
+                    </div>
+                    <div>
+                        <img src="http://mangaleader.com/mangas/one-punch-man/62/22.jpg?v=f">
+                    </div>
+                    <div>
+                        <img src="http://mangaleader.com/mangas/one-punch-man/62/22.jpg?v=f">
+                    </div>
+                    <div>
+                        <img src="http://mangaleader.com/mangas/one-punch-man/62/22.jpg?v=f">
+                    </div>
+                </div>
+
                 <h3>Related</h3>
                 <div class="related">
                     @foreach($relatedArray as $related)
-                        <div>{{ $related->name }}</div>
+                        <div>
+                            <img src="https://myanimelist.cdn-dena.com/images/anime/7/72533l.jpg">
+                            <span>{{ $related->name }}</span>
+                        </div>
                     @endforeach
                 </div>
             </div>

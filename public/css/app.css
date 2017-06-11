@@ -150,17 +150,30 @@ ul {
         width: 75%; }
       .main-container .rightside .split-two .smaller {
         width: 25%; }
-    .main-container .rightside .related {
+    .main-container .rightside .related, .main-container .rightside .preview {
       display: flex;
       justify-content: space-between;
-      width: 100%; }
-      .main-container .rightside .related div {
+      width: 100%;
+      margin-bottom: 20px; }
+      .main-container .rightside .related div, .main-container .rightside .preview div {
         display: block;
         padding: 5px 3px 0;
-        width: 20%; }
-        .main-container .rightside .related div img {
+        width: 20%;
+        position: relative; }
+        .main-container .rightside .related div img, .main-container .rightside .preview div img {
           width: 100%;
-          height: auto; }
+          height: auto;
+          display: block; }
+        .main-container .rightside .related div span, .main-container .rightside .preview div span {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          margin: 0 3px;
+          background: linear-gradient(transparent, #000);
+          color: #FFF;
+          font-weight: 500;
+          padding: 10px 10px;
+          box-sizing: border-box; }
 
 .content-with-nav {
   overflow: auto;
