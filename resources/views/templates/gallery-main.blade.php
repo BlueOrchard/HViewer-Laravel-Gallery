@@ -40,13 +40,16 @@
 
                 <h3>Artists</h3>
                 <ul>
-                    <li>Murata, Yusuke</li>
-                    <li>ONE</li>
+                    @foreach($generalData->artists as $artist)
+                        <li>{{ $artist }}</li>
+                    @endforeach
                 </ul>
 
                 <h3>Languages</h3>
                 <ul>
-                    <li>English</li>
+                    @foreach($generalData->languages as $language)
+                        <li>{{ $language }}</li>
+                    @endforeach
                 </ul>
             </div>
         </div>

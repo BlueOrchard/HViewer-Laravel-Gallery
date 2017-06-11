@@ -19,6 +19,8 @@ class CreateGalleryMangaTable extends Migration
             $table->string('slug');
             $table->text('description');
             $table->text('tags');
+            $table->text('artists');
+            $table->text('languages');
             $table->timestamps();
         });
     }
