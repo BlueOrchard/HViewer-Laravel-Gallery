@@ -8,13 +8,17 @@
            <span class="mdi mdi-arrow-right"></span>
         </a>
         <div class="mini-data">
-            <span>Pages</span>
-            <span>30</span>
+            <span>Series</span>
+            <span>{{ $generalData->series }}</span>
         </div>
         <div class="mini-data">
             <span>Date Added</span>
             <span>June 10, 2017</span>
         </div>
+        <div class="mini-data">
+            <span>Pages</span>
+            <span>30</span>
+        </div> 
     </div>
     <div class="rightside">
         <h1>{{ $generalData->name }}</h1>
@@ -53,6 +57,11 @@
                 </div>
             </div>
             <div class="fifty-container smaller">
+                <h3>Series</h3>
+                <ul>
+                    <li>{{ $generalData->series }}</li>
+                </ul>
+
                 <h3>Categories</h3>
                 <ul>
                     @foreach($generalData->tags as $tag)
