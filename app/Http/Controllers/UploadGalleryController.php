@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Gallery;
+use Image;
+use File;
 
 class UploadGalleryController extends Controller
 {
@@ -19,7 +22,9 @@ class UploadGalleryController extends Controller
         $fullpath = 'storage/images/' . $slug . '/cover/' . $filename;
         $fullpath_thumb = 'storage/images/' . $slug . '/cover/thumb_' . $filename;
 
-        File::makeDirectory('storage/images/' . $slug . '/cover/', 0775, true);
+        if(!File::exists('storage/images/' . $slug . '/cover/')){
+            File::makeDirectory('storage/images/' . $slug . '/cover/', 0775, true);
+        }
         Image::make($path)->save(public_path($fullpath));
         Image::make($path)->fit(229, 343)->save(public_path($fullpath_thumb));
 
