@@ -50,7 +50,7 @@
                 <div class="related">
                     @foreach($relatedArray as $related)
                         <div>
-                            <img src="https://myanimelist.cdn-dena.com/images/anime/7/72533l.jpg">
+                            <img src="{{ $related->cover_photo_thumb }}">
                             <span>{{ $related->name }}</span>
                         </div>
                     @endforeach

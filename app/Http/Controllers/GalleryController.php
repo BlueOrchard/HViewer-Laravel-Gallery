@@ -16,7 +16,7 @@ class GalleryController extends Controller
             $generalData->tags = json_decode($generalData->tags);
             $relatedArray = Gallery::where('tags', 'LIKE', '%'.$generalData->tags[0].'%')
                                     ->limit(5)
-                                    ->get(['name', 'slug']);
+                                    ->get(['name', 'slug', 'cover_photo_thumb']);
         }
 
         if($generalData->artists){
