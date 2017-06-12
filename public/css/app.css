@@ -159,7 +159,7 @@ ul {
         width: 25%; }
     .main-container .rightside .related, .main-container .rightside .preview {
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-start;
       width: 100%;
       margin-bottom: 20px; }
       .main-container .rightside .related div, .main-container .rightside .preview div {
