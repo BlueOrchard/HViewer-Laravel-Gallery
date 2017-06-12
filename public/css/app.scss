@@ -9,6 +9,7 @@ $containerBg: #f3f3f3;
 $mainBg: #e6e6e6;
 $leftBg: #e6e6e6;
 $darkContainerBg: #32414a;
+$darkContainerHoverBg: #647c8a;
 
 $mainColor: #6b6b6b;
 $smallHeadingColor: #5889a7;;
@@ -281,6 +282,42 @@ ul{
 
     .main-container{
         width: 100%;
+    }
+}
+
+.upload-form{
+    background: #f3f3f3;
+    padding: $padding;
+
+    h4{
+        font-weight: 500;
+        margin: 5px 0 5px 3px;
+        font-size: 11px;
+    }
+
+    input, textarea{
+        width: 100%;
+        box-sizing: border-box;
+        margin-bottom: 10px;
+        padding: 5px;
+        border-radius: 3px;
+        border: 1px solid #DDD;
+        outline: 0;
+    }
+
+    button{
+        background: $darkContainerBg;
+        border: 0;
+        padding: 10px 20px;
+        color: #FFF;
+        border-radius: 3px;
+        margin: 10px 5px;
+        cursor: pointer;
+        transition: 0.25s all;
+    }
+
+    button:hover{
+        background: $darkContainerHoverBg;
     }
 }
 
