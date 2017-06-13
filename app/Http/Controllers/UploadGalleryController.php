@@ -16,7 +16,7 @@ class UploadGalleryController extends Controller
 
     public function zipCreate(Request $request){
         //Data strings
-        $title = "One Punch Man Chapter 2";
+        $title = "One Punch Man Chapter 3";
         $slug = str_slug($title, "-");
         $series = "One Punch Man";
 
@@ -56,13 +56,13 @@ class UploadGalleryController extends Controller
 
         //Create gallery array
         foreach($files as $file){
-            array_push($imgarr, (string)$file);
+            array_push($imgarr, stripslashes((string)$file));
         }
 
         //Create thumbnail gallery array
         $thumbfiles = File::allFiles($thumbdir);
         foreach($thumbfiles as $file){
-            array_push($thumbarr, (string)$file);
+            array_push($thumbarr, stripslashes((string)$file));
         }
 
         //Create cover photo
