@@ -1,7 +1,7 @@
 <div class="main-container">
    <div class="leftside">
        <div class="img-holder">
-           <img src="{{ $generalData->cover_photo_thumb }}">
+           <img src="{{ url($generalData->cover_photo_thumb) }}">
        </div>
        <a class="readnow" href="{{ $generalData->slug }}/read">
            Read Now 
@@ -29,28 +29,18 @@
 
                 <h3>Preview</h3>
                 <div class="preview">
+                    @foreach($generalData->image_gallery_thumbs as $imagethumb)
                     <div>
-                        <img src="http://mangaleader.com/mangas/one-punch-man/62/22.jpg?v=f">
+                        <img src="{{ url($imagethumb) }}">
                     </div>
-                    <div>
-                        <img src="http://mangaleader.com/mangas/one-punch-man/62/22.jpg?v=f">
-                    </div>
-                    <div>
-                        <img src="http://mangaleader.com/mangas/one-punch-man/62/22.jpg?v=f">
-                    </div>
-                    <div>
-                        <img src="http://mangaleader.com/mangas/one-punch-man/62/22.jpg?v=f">
-                    </div>
-                    <div>
-                        <img src="http://mangaleader.com/mangas/one-punch-man/62/22.jpg?v=f">
-                    </div>
+                    @endforeach
                 </div>
 
                 <h3>Related</h3>
                 <div class="related">
                     @foreach($relatedArray as $related)
                         <div>
-                            <img src="{{ $related->cover_photo_thumb }}">
+                            <img src="{{ url($related->cover_photo_thumb) }}">
                             <span>{{ $related->name }}</span>
                         </div>
                     @endforeach
