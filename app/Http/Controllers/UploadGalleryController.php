@@ -18,25 +18,26 @@ class UploadGalleryController extends Controller
         $title = "One Punch Man Chapter 7";
         $slug = str_slug($title, "-");
 
-        $tmpdir = 'storage/tmp/' . $slug . '/';
         $gallerydir = 'storage/images/' . $slug . '/gallery/';
-
-        if(!File::exists($tmpdir)){
-            File::makeDirectory($tmpdir, 0775, true);
-        }
-        $zip = new ZipArchive();
-        $zip->open($request->gallery);
-        $zip->extractTo('storage/tmp/' . $slug . '/');
+        $thumbdir = 'storage/images/' . $slug . '/thumbs/';
 
         if(!File::exists($gallerydir)){
             File::makeDirectory($gallerydir, 0775, true);
         }
-        $files = File::allFiles($tmpdir);
-        foreach($files as $file){
-            $filename = basename((string)$file);
-            Image::make($file)->save(public_path($gallerydir.$filename));
+
+        if(!File::exists($thumbdir)){
+            File::makeDirectory($thumbdir, 0775, true);
         }
-        File::deleteDirectory($tmpdir);
+
+        $zip = new ZipArchive();
+        $zip->open($request->gallery);
+        $zip->extractTo($gallerydir);
+
+        $files = File::allFiles($gallerydir);
+        for($i = 0; $i < count($files) && $i < 5; $i++){
+            $filename = basename((string)$files[$i]);
+            Image::make($files[$i])->fit(229, 343)->save(public_path($thumbdir.$filename));
+        }
     }
 
     public function create(){
