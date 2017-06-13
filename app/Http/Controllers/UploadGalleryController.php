@@ -18,6 +18,9 @@ class UploadGalleryController extends Controller
         $title = "One Punch Man Chapter 7";
         $slug = str_slug($title, "-");
 
+        $imgarr = [];
+        $thumbarr = [];
+
         $gallerydir = 'storage/images/' . $slug . '/gallery/';
         $thumbdir = 'storage/images/' . $slug . '/thumbs/';
 
@@ -36,8 +39,21 @@ class UploadGalleryController extends Controller
         $files = File::allFiles($gallerydir);
         for($i = 0; $i < count($files) && $i < 5; $i++){
             $filename = basename((string)$files[$i]);
-            Image::make($files[$i])->fit(229, 343)->save(public_path($thumbdir.$filename));
+            Image::make($files[$i])->fit(229, 343)->save(public_path($thumbdir.'thumb_'.$filename));
         }
+
+        foreach($files as $file){
+            array_push($imgarr, (string)$file);
+        }
+
+        print_r($imgarr);
+
+        $thumbfiles = File::allFiles($thumbdir);
+        foreach($thumbfiles as $file){
+            array_push($thumbarr, (string)$file);
+        }
+
+        print_r($thumbarr);
     }
 
     public function create(){
