@@ -17,4 +17,4 @@ Route::get('manga/{slug}/read', function(){
 });
 
 Route::get('add-manga/new', ['uses' => 'UploadGalleryController@index']);
-Route::post('add-manga', ['uses' => 'UploadGalleryController@create']);
+Route::post('add-manga', ['uses' => 'UploadGalleryController@zipCreate']);

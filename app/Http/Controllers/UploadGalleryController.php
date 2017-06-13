@@ -6,11 +6,37 @@ use Illuminate\Http\Request;
 use App\Gallery;
 use Image;
 use File;
+use ZipArchive;
 
 class UploadGalleryController extends Controller
 {
     public function index(){
         return view('main-upload');
+    }
+
+    public function zipCreate(Request $request){
+        $title = "One Punch Man Chapter 7";
+        $slug = str_slug($title, "-");
+
+        $tmpdir = 'storage/tmp/' . $slug . '/';
+        $gallerydir = 'storage/images/' . $slug . '/gallery/';
+
+        if(!File::exists($tmpdir)){
+            File::makeDirectory($tmpdir, 0775, true);
+        }
+        $zip = new ZipArchive();
+        $zip->open($request->gallery);
+        $zip->extractTo('storage/tmp/' . $slug . '/');
+
+        if(!File::exists($gallerydir)){
+            File::makeDirectory($gallerydir, 0775, true);
+        }
+        $files = File::allFiles($tmpdir);
+        foreach($files as $file){
+            $filename = basename((string)$file);
+            Image::make($file)->save(public_path($gallerydir.$filename));
+        }
+        File::deleteDirectory($tmpdir);
     }
 
     public function create(){

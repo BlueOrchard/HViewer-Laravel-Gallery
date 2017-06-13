@@ -1,4 +1,4 @@
-<form class="upload-form" method="post" action="/add-manga">
+<form class="upload-form" method="post" action="/add-manga" enctype="multipart/form-data">
     {{ csrf_field() }}
 
     <h4>Name and Chapter</h4>
