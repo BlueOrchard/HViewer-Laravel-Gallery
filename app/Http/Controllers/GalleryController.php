@@ -26,6 +26,10 @@ class GalleryController extends Controller
         if($generalData->languages){
             $generalData->languages = json_decode($generalData->languages);
         }
+        
+        if($generalData->image_gallery_thumbs){
+            $generalData->image_gallery_thumbs = json_decode($generalData->image_gallery_thumbs);
+        }
 
         return view('main-description', compact('generalData', 'relatedArray'));
     }
