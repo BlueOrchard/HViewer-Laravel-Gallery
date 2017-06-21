@@ -16,6 +16,14 @@ ul {
   margin: 0 0 10px 20px;
   padding: 0; }
 
+a {
+  text-decoration: none;
+  color: #6086b7;
+  transition: 0.25s all; }
+
+a:hover {
+  color: #95b1d6; }
+
 .header {
   display: flex;
   box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.27);
@@ -188,6 +196,33 @@ ul {
   margin-top: 46px; }
   .content-with-nav .main-container {
     width: 100%; }
+
+.content-without-nav {
+  overflow: auto;
+  margin-top: 46px;
+  width: 100%;
+  background: #f3f3f3; }
+  .content-without-nav .mini-back {
+    text-align: left;
+    background: #e6e6e6;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-bottom: 1px solid #DDD; }
+    .content-without-nav .mini-back h3 {
+      font-weight: 300;
+      font-size: 2em;
+      margin: 0 0 10px; }
+  .content-without-nav .bottom {
+    border-top: 1px solid #DDD;
+    border-bottom: 0;
+    margin-bottom: 0; }
+  .content-without-nav .imageholder {
+    text-align: center; }
+    .content-without-nav .imageholder img {
+      max-width: 100%;
+      margin: 0 auto;
+      display: block;
+      margin-bottom: 10px; }
 
 .upload-form {
   background: #f3f3f3;

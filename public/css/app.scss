@@ -13,7 +13,8 @@ $darkContainerHoverBg: #647c8a;
 
 $mainColor: #6b6b6b;
 $smallHeadingColor: #5889a7;;
-$linkColor: #040404;
+$linkColor: #6086b7;
+$linkColorHover: #95b1d6;
 
 $headerHeight: 46px;
 $navWidth: 95px;
@@ -40,6 +41,16 @@ p{
 ul{
     margin: 0 0 10px 20px;
     padding: 0;
+}
+
+a{
+    text-decoration: none;
+    color: $linkColor;
+    transition: 0.25s all;
+}
+
+a:hover{
+    color: $linkColorHover;
 }
 
 .header{
@@ -282,6 +293,44 @@ ul{
 
     .main-container{
         width: 100%;
+    }
+}
+
+.content-without-nav{
+    overflow: auto;
+    margin-top: $headerHeight;
+    width: 100%;
+    background: $containerBg;
+
+    .mini-back{
+        text-align: left;
+        background: $mainBg;
+        margin-bottom: $margin;
+        padding: $padding;
+        border-bottom: 1px solid #DDD;
+
+        h3{
+            font-weight: 300;
+            font-size: 2em;
+            margin: 0 0 10px;
+        }
+    }
+
+    .bottom{
+        border-top: 1px solid #DDD;
+        border-bottom: 0;
+        margin-bottom: 0;
+    }
+
+    .imageholder{
+        text-align: center;
+
+        img{
+            max-width: 100%;
+            margin: 0 auto;
+            display: block;
+            margin-bottom: 10px;
+        }
     }
 }
 
