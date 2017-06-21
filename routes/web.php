@@ -12,9 +12,7 @@
 */
 
 Route::get('manga/{slug}', ['as' => 'slug', 'uses' => 'GalleryController@index']);
-Route::get('manga/{slug}/read', function(){
-    echo 'TODO: Add Reading Controller/View';
-});
+Route::get('manga/{slug}/read', ['as' => 'slug', 'uses' => 'GalleryController@read']);
 
 Route::get('add-manga/new', ['uses' => 'UploadGalleryController@index']);
 Route::post('add-manga', ['uses' => 'UploadGalleryController@zipCreate']);

@@ -33,4 +33,14 @@ class GalleryController extends Controller
 
         return view('main-description', compact('generalData', 'relatedArray'));
     }
+
+    public function read($slug){
+        $fullGallery = Gallery::where('slug', $slug)
+                        ->get(['name', 'slug', 'image_gallery_full'])
+                        ->first();
+
+        $fullGallery->image_gallery_full = json_decode($fullGallery->image_gallery_full);
+
+        return view('main-read', compact('fullGallery'));
+    }
 }
