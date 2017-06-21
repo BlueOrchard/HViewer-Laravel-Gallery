@@ -16,6 +16,7 @@ class UploadGalleryController extends Controller
 
     public function zipCreate(Request $request){
         //Data strings
+        //TODO replace the below values with the POST $request values
         $title = "One Punch Man Chapter 3";
         $slug = str_slug($title, "-");
         $series = "One Punch Man";
