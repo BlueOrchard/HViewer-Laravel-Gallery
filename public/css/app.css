@@ -34,14 +34,41 @@ a:hover {
   position: fixed;
   width: 100%;
   top: 0;
-  left: 0; }
+  left: 0;
+  justify-content: flex-start; }
 
 .logo {
-  padding: 15px;
-  width: 95px; }
+  padding: 10px;
+  width: 200px; }
+  .logo img {
+    height: 100%;
+    width: auto; }
 
 .search {
-  padding: 15px; }
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  width: 50%; }
+  .search form {
+    width: 100%;
+    display: flex; }
+    .search form input {
+      padding: 7px 14px;
+      outline: 0;
+      background: #dedede;
+      border: 0;
+      border-radius: 3px 0 0 3px;
+      width: calc(100% - 55px); }
+    .search form button {
+      height: 100%;
+      background: #dedede;
+      border: 0;
+      padding: 7px 20px;
+      border-radius: 0 3px 3px 0;
+      border-left: 1px solid #c7c7c7;
+      outline: 0;
+      width: 55px;
+      cursor: pointer; }
 
 .simple-nav {
   padding: 10px;
@@ -53,10 +80,23 @@ a:hover {
     display: block;
     margin-top: -1px; }
 
-.user-profile p {
-  margin: 0;
-  line-height: 1;
-  padding: 15px; }
+.user-profile {
+  padding: 7px;
+  margin: 0 10px;
+  width: 46px;
+  height: 46px;
+  cursor: pointer; }
+  .user-profile p {
+    margin: 0;
+    line-height: 1;
+    padding: 10px; }
+  .user-profile .crop-image {
+    height: 100%;
+    border-radius: 100px;
+    overflow: hidden; }
+    .user-profile .crop-image img {
+      height: 100%;
+      width: auto; }
 
 .leftnav {
   width: 95px;

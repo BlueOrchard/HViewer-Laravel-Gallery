@@ -1,17 +1,19 @@
 <div class="header">
     <div class="logo">
-        Logo Here
+        <img src="{{ url('logo.png') }}">
     </div>
     <div class="search">
         <form method="get" action="/search/">
             <input placeholder="Search" name="q"/>
-            <button type="submit">Submit</button>
+            <button type="submit"><span class="mdi mdi-magnify"></span></button>
         </form>
     </div>
     <div class="simple-nav">
         <span class="mdi mdi-view-carousel"></span>
     </div>
     <div class="user-profile">
-        <p>Your Profile</p>
+        <div class="crop-image">
+            <img src="{{ url('placeholder.png') }}">
+        </div>
     </div>
 </div>
