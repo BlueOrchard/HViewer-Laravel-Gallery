@@ -3,7 +3,10 @@
         Logo Here
     </div>
     <div class="search">
-        Search Form Here
+        <form method="get" action="/search/">
+            <input placeholder="Search" name="q"/>
+            <button type="submit">Submit</button>
+        </form>
     </div>
     <div class="simple-nav">
         <span class="mdi mdi-view-carousel"></span>

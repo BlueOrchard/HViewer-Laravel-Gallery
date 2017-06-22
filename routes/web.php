@@ -29,7 +29,7 @@ Route::get('archive/', ['uses' => 'ArchiveController@index']);
 Route::get('archive/page/{num}', ['uses' => 'ArchiveController@index']);
 
 //Search and filter routes. Possibly merge these two routes together.
-Route::get('search/{query}', ['as' => 'query', 'uses' => 'BrowseController@index']);
+Route::get('search/', ['uses' => 'BrowseController@index']);
 Route::get('filter/', ['uses' => 'BrowseController@index']);
 
 Route::get('login/', function ($id) {
