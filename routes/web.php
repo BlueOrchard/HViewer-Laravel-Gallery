@@ -11,47 +11,34 @@
 |
 */
 
-//Normal routes
-Route::get('/', function ($id) {
-    //TODO add homepage
-});
-
+/* --- COMPLETED ROUTES --- */
 //Individual manga/gallery routes
 Route::get('manga/{slug}', ['as' => 'slug', 'uses' => 'GalleryController@index']);
 Route::get('manga/{slug}/read', ['as' => 'slug', 'uses' => 'GalleryController@read']);
 
+/* --- ROUTES IN PROGRESS --- */
+Route::get('add-manga/new', ['uses' => 'UploadGalleryController@index']);
+Route::post('add-manga', ['uses' => 'UploadGalleryController@zipCreate']);
+
+/* --- INCOMPLETE ROUTES --- */
+//Homepage Route
+Route::get('/', ['uses' => 'HomepageController@index']);
+
 //Archive routes for linear browsing
-Route::get('archive/', function ($id) {
-    //TODO add archive page
-});
-Route::get('archive/page/{num}', function ($id) {
-    //TODO add archive page and pagination
-});
+Route::get('archive/', ['uses' => 'ArchiveController@index']);
+Route::get('archive/page/{num}', ['uses' => 'ArchiveController@index']);
 
 //Search and filter routes. Possibly merge these two routes together.
-Route::get('search/{$query}', function ($id) {
-    //TODO add search page
-});
-Route::get('filter/', function ($id) {
-    //TODO add filter page
-    //POSSIBLY MERGE WITH SEARCH PAGE (Browse)
-});
+Route::get('search/{query}', ['as' => 'query', 'uses' => 'BrowseController@index']);
+Route::get('filter/', ['uses' => 'BrowseController@index']);
 
 Route::get('login/', function ($id) {
     //TODO login and register 
 });
 
 //User profile routes. Start authentication middleware here.
-Route::get('profile/', function ($id) {
-    //TODO add profile page
-});
-Route::get('favorites/', function ($id) {
-    //TODO add favorites page
-});
+Route::get('profile/', ['uses' => 'ProfileController@index']);
+Route::get('favorites/', ['uses' => 'ProfileController@favorites']);
 
 //Admin function routes. Add admin authentication middleware here.
-Route::get('manga-admin/', function ($id) {
-    //TODO add admin page for galleries/manga
-});
-Route::get('add-manga/new', ['uses' => 'UploadGalleryController@index']);
-Route::post('add-manga', ['uses' => 'UploadGalleryController@zipCreate']);
+Route::get('manga-admin/', ['uses' => 'AdminController@index']);
