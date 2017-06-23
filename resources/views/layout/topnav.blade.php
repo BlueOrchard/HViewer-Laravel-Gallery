@@ -1,6 +1,6 @@
 <div class="header">
     <div class="logo">
-        <img src="{{ url('logo.png') }}">
+        <a href="/"><img src="{{ url('logo.png') }}"></a>
     </div>
     <div class="search">
         <form method="get" action="/search/">
