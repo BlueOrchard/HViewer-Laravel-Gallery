@@ -16,11 +16,17 @@
 Route::get('manga/{slug}', ['as' => 'slug', 'uses' => 'GalleryController@index']);
 Route::get('manga/{slug}/read', ['as' => 'slug', 'uses' => 'GalleryController@read']);
 
+
 /* --- ROUTES IN PROGRESS --- */
+
+//TODO finish admin panel and add links from admin panel to these routes
 Route::get('add-manga/new', ['uses' => 'UploadGalleryController@index']);
 Route::post('add-manga', ['uses' => 'UploadGalleryController@zipCreate']);
 
-/* --- INCOMPLETE ROUTES --- */
+
+/* --- ROUTES TO DO NEXT --- */
+//      - These routes will be done in one sitting
+
 //Homepage Route
 Route::get('/', ['uses' => 'HomepageController@index']);
 
@@ -31,6 +37,9 @@ Route::get('archive/page/{num}', ['uses' => 'ArchiveController@index']);
 //Search and filter routes. Possibly merge these two routes together.
 Route::get('search/', ['uses' => 'BrowseController@index']);
 Route::get('filter/', ['uses' => 'BrowseController@index']);
+
+
+/* --- INCOMPLETE ROUTES --- */
 
 Route::get('login/', function ($id) {
     //TODO login and register 
