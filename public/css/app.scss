@@ -540,16 +540,33 @@ a:hover{
         box-sizing: border-box;
         font-weight: 300;
         padding: 5px 10px;
+        z-index: 1;
+        backface-visibility: hidden;
     }
 
-    &:after{
-        content: "\F054";
-        display: inline-block;
-        font: normal normal normal 24px/1 "Material Design Icons";
-        font-size: inherit;
-        text-rendering: auto;
-        line-height: inherit;
-        -webkit-font-smoothing: antialiased;
+    .hovered{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: calc(100% - 10px);
+        margin: 0 5px;
+        text-align: center;
+        padding-top: 50%;
+        height: 100%;
+        box-sizing: border-box;
+        background: rgba(50, 65, 74, 0.32);
+        color: #FFF;
+        font-size: 75px;
+        transition: 0.25s all;
+        opacity: 0;
+
+        &:hover{
+            opacity: 1;
+        }
+    }
+
+    .selected{
+        opacity: 1;
     }
 }
 

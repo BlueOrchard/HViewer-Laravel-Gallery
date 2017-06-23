@@ -9,4 +9,10 @@
         <img src="{{ url($item->cover_photo_thumb) }}">
         <p>{{ $item->name }}</p>
     </a>
+
+    <a href="/manga/{{ $item->slug }}">
+        <div class="hovered">
+            <span class="mdi mdi-arrow-right"></span>
+        </div>
+    </a>
 </div>

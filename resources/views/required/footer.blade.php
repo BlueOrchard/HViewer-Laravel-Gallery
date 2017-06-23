@@ -2,10 +2,11 @@
     <script>
         var timer;
         $('.item-component').mouseenter(function(){
-            $(this).addClass('hovered');
-
             var this_data = this;
             timer = setTimeout(function(){
+                $('.item-component').find('.hovered').removeClass('selected');
+                $(this_data).find('.hovered').addClass('selected');
+
                 $('.rightside').html('<img src="'+$(this_data).data('img')+'">'+
                         '<div class="entry"><span>Name</span><span>'+$(this_data).data('title')+'</span></div>'+
                         '<div class="entry"><span>Series</span></span><span>'+$(this_data).data('series')+'</span></div>'+
