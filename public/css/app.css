@@ -293,6 +293,15 @@ a:hover {
   .upload-form button:hover {
     background: #647c8a; }
 
+.homepage {
+  padding: 10px;
+  background: #f3f3f3; }
+
+.holder {
+  display: flex; }
+  .holder .item-component {
+    width: 20%; }
+
 .footer {
   background: #32414a;
   min-height: 300px; }

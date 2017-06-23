@@ -426,6 +426,23 @@ a:hover{
     }
 }
 
+.homepage{
+    padding: $padding;
+    background: $containerBg;
+}
+
+.holder{
+    display: flex;
+
+    .item-component{
+        width: 20%;
+    }
+}
+
+.item-component{
+    
+}
+
 .footer{
     background: $darkContainerBg;
     min-height: 300px;
