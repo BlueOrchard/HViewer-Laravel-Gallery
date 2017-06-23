@@ -297,8 +297,9 @@ a:hover {
   background: #f3f3f3;
   display: flex; }
   .homepage .leftside {
-    width: calc(100% - 300px);
-    padding: 10px; }
+    width: calc(100% - 300px); }
+    .homepage .leftside .moreitems {
+      padding: 10px; }
     .homepage .leftside h1 {
       font-weight: 300;
       margin: 0 0 10px;
@@ -307,7 +308,24 @@ a:hover {
   .homepage .rightside {
     width: 300px;
     background: #e6e6e6;
-    border-left: 1px solid #DDD; }
+    border-left: 1px solid #DDD;
+    padding: 10px; }
+    .homepage .rightside .readme {
+      text-align: center;
+      margin-top: 20px; }
+      .homepage .rightside .readme span {
+        display: inline-block;
+        font-size: 60px;
+        background: #32414a;
+        color: #FFF;
+        width: 100px;
+        height: 100px;
+        line-height: 100px;
+        border-radius: 50px; }
+    .homepage .rightside .tooltip {
+      font-size: 12px;
+      text-align: center;
+      margin-top: 20px; }
 
 .holder {
   display: flex; }
@@ -315,7 +333,9 @@ a:hover {
     width: 20%; }
 
 .item-component {
-  padding: 0 5px; }
+  padding: 0 5px;
+  position: relative;
+  margin-bottom: 15px; }
   .item-component img {
     width: 100%;
     height: auto;
@@ -323,9 +343,16 @@ a:hover {
     display: block;
     box-sizing: border-box; }
   .item-component p {
-    padding: 5px 0px;
-    margin: 0 0 10px;
-    font-weight: 500; }
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: 0 5px;
+    color: #FFF;
+    background: rgba(50, 65, 74, 0.76);
+    width: calc(100% - 10px);
+    box-sizing: border-box;
+    font-weight: 300;
+    padding: 5px 10px; }
 
 .footer {
   background: #32414a;

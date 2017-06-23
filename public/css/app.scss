@@ -432,7 +432,10 @@ a:hover{
 
     .leftside{
         width: calc(100% - 300px);
-        padding: $padding;
+
+        .moreitems{
+            padding: $padding;
+        }
 
         h1{
             font-weight: 300;
@@ -446,6 +449,29 @@ a:hover{
         width: 300px;
         background: $leftBg;
         border-left: 1px solid #DDD;
+        padding: $padding;
+
+        .readme{
+            text-align: center;
+            margin-top: 20px;
+            
+            span{
+                display: inline-block;
+                font-size: 60px;
+                background: $darkContainerBg;
+                color: #FFF;
+                width: 100px;
+                height: 100px;
+                line-height: 100px;
+                border-radius: 50px;
+            }
+        }
+
+        .tooltip{
+            font-size: 12px;
+            text-align: center;
+            margin-top: 20px;
+        }
     }
 }
 
@@ -459,6 +485,8 @@ a:hover{
 
 .item-component{
     padding: 0 5px;
+    position: relative;
+    margin-bottom: 15px;
 
     img{
         width: 100%;
@@ -469,9 +497,16 @@ a:hover{
     }
 
     p{
-        padding: 5px 0px;
-        margin: 0 0 10px;
-        font-weight: 500;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        margin: 0 5px;
+        color: #FFF;
+        background: rgba(50, 65, 74, 0.76);
+        width: calc(100% - 10px);
+        box-sizing: border-box;
+        font-weight: 300;
+        padding: 5px 10px;
     }
 }
 
