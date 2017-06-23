@@ -7,6 +7,9 @@
                 $('.item-component').find('.hovered').removeClass('selected');
                 $(this_data).find('.hovered').addClass('selected');
 
+                $('.item-component').removeClass('selected-main');
+                $(this_data).addClass('selected-main');
+
                 $('.rightside').html('<img src="'+$(this_data).data('img')+'">'+
                         '<div class="entry"><span>Name</span><span>'+$(this_data).data('title')+'</span></div>'+
                         '<div class="entry"><span>Series</span></span><span>'+$(this_data).data('series')+'</span></div>'+

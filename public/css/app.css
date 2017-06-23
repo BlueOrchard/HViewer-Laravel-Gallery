@@ -358,9 +358,10 @@ a:hover {
     width: 20%; }
 
 .item-component {
-  padding: 0 5px;
+  margin: 0 5px;
   position: relative;
-  margin-bottom: 15px; }
+  margin-bottom: 15px;
+  overflow: hidden; }
   .item-component img {
     width: 100%;
     height: auto;
@@ -371,10 +372,10 @@ a:hover {
     position: absolute;
     bottom: 0;
     left: 0;
-    margin: 0 5px;
+    margin: 0;
     color: #FFF;
     background: rgba(50, 65, 74, 0.76);
-    width: calc(100% - 10px);
+    width: 100%;
     box-sizing: border-box;
     font-weight: 300;
     padding: 5px 10px;
@@ -386,19 +387,17 @@ a:hover {
     top: 0;
     left: 0;
     width: 0%;
-    margin: 0 5px;
     height: 5px;
     background: #6086b7;
-    transition: 0s all; }
+    transition: 0s width linear, 0.25s transform linear; }
   .item-component:hover:before {
-    width: calc(100% - 10px);
-    transition: width 1s linear; }
+    width: 100%;
+    transition: width 1s linear, 0.25s transform linear; }
   .item-component .hovered {
     position: absolute;
     top: 0;
     left: 0;
-    width: calc(100% - 10px);
-    margin: 0 5px;
+    width: 100%;
     text-align: center;
     padding-top: 50%;
     height: 100%;
@@ -410,10 +409,22 @@ a:hover {
     opacity: 0; }
     .item-component .hovered:hover {
       opacity: 1; }
-    .item-component .hovered:before {
-      display: none; }
   .item-component .selected {
     opacity: 1; }
+
+@keyframes bounce {
+  0% {
+    transform: scale(1); }
+  50% {
+    transform: scale(1.5); }
+  100% {
+    transform: scale(1); } }
+
+.selected-main .selected {
+  animation: bounce 0.25s ease-in-out; }
+
+.selected-main:before {
+  transform: translateY(-5px); }
 
 .footer {
   background: #32414a;

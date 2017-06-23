@@ -517,9 +517,10 @@ a:hover{
 }
 
 .item-component{
-    padding: 0 5px;
+    margin: 0 5px;
     position: relative;
     margin-bottom: 15px;
+    overflow: hidden;
 
     img{
         width: 100%;
@@ -533,10 +534,10 @@ a:hover{
         position: absolute;
         bottom: 0;
         left: 0;
-        margin: 0 5px;
+        margin: 0;
         color: #FFF;
         background: rgba(50, 65, 74, 0.76);
-        width: calc(100% - 10px);
+        width: 100%;
         box-sizing: border-box;
         font-weight: 300;
         padding: 5px 10px;
@@ -550,16 +551,15 @@ a:hover{
         top: 0;
         left: 0;
         width: 0%;
-        margin: 0 5px;
         height: 5px;
         background: $linkColor;
-        transition: 0s all;
+        transition: 0s width linear, 0.25s transform linear;
     }
 
     &:hover{
         &:before{
-            width: calc(100% - 10px);
-            transition: width 1s linear;
+            width: 100%;
+            transition: width 1s linear, 0.25s transform linear;
         }
     }
 
@@ -567,8 +567,7 @@ a:hover{
         position: absolute;
         top: 0;
         left: 0;
-        width: calc(100% - 10px);
-        margin: 0 5px;
+        width: 100%;
         text-align: center;
         padding-top: 50%;
         height: 100%;
@@ -582,14 +581,34 @@ a:hover{
         &:hover{
             opacity: 1;
         }
-
-        &:before{
-            display: none;
-        }
     }
 
     .selected{
         opacity: 1;
+    }
+}
+
+@keyframes bounce{
+    0%{
+        transform: scale(1);
+    }
+
+    50%{
+        transform: scale(1.5);
+    }
+
+    100%{
+        transform: scale(1);
+    }
+}
+
+.selected-main{
+    .selected{
+        animation: bounce 0.25s ease-in-out;
+    }
+
+    &:before{
+        transform: translateY(-5px);
     }
 }
 
