@@ -17,7 +17,7 @@ class UploadGalleryController extends Controller
     public function zipCreate(Request $request){
         //Data strings
         //TODO replace the below values with the POST $request values
-        $title = "One Punch Man Chapter 3";
+        $title = "One Punch Man Chapter 10";
         $slug = str_slug($title, "-");
         $series = "One Punch Man";
 
@@ -27,13 +27,32 @@ class UploadGalleryController extends Controller
         $artists = ["Murata, Yusuke", "ONE"];
         $languages = ["English"];
 
+        //Create new database entry
+        $gallery = new Gallery;
+
+        $gallery->name = $title;
+        $gallery->slug = $slug;
+        $gallery->series = $series;
+        $gallery->series_slug = str_slug($series);
+        $gallery->description = $description;
+        $gallery->tags = json_encode($tags);
+        $gallery->artists = json_encode($artists);
+        $gallery->languages = json_encode($languages);
+        //Assigning default values for database creation
+        $gallery->cover_photo = "";
+        $gallery->cover_photo_thumb = "";
+        $gallery->image_gallery_thumbs = "";
+        $gallery->image_gallery_full = "";
+
+        $gallery->save();
+
         //Initialize arrays for gallery
         $imgarr = [];
         $thumbarr = [];
 
         //Set paths for gallery
-        $gallerydir = 'storage/images/' . $slug . '/gallery/';
-        $thumbdir = 'storage/images/' . $slug . '/thumbs/';
+        $gallerydir = 'storage/images/' . $gallery->id . '/gallery/';
+        $thumbdir = 'storage/images/' . $gallery->id . '/thumbs/';
 
         //Create paths for gallery
         if(!File::exists($gallerydir)){
@@ -70,28 +89,18 @@ class UploadGalleryController extends Controller
         //TODO allow manual override in form instead of using gallery array
         $path = $imgarr[0];
         $filename = basename($path);
-        $fullpath = 'storage/images/' . $slug . '/cover/' . $filename;
-        $fullpath_thumb = 'storage/images/' . $slug . '/cover/thumb_' . $filename;
+        $fullpath = 'storage/images/' . $gallery->id . '/cover/' . $filename;
+        $fullpath_thumb = 'storage/images/' . $gallery->id . '/cover/thumb_' . $filename;
 
-        if(!File::exists('storage/images/' . $slug . '/cover/')){
-            File::makeDirectory('storage/images/' . $slug . '/cover/', 0775, true);
+        if(!File::exists('storage/images/' . $gallery->id . '/cover/')){
+            File::makeDirectory('storage/images/' . $gallery->id . '/cover/', 0775, true);
         }
         Image::make($path)->save(public_path($fullpath));
         Image::make($path)->fit(229, 343)->save(public_path($fullpath_thumb));
 
-        //Create new database entry
-        $gallery = new Gallery;
-
-        $gallery->name = $title;
-        $gallery->slug = $slug;
-        $gallery->series = $series;
-        $gallery->series_slug = str_slug($series);
+        //Add image paths to database
         $gallery->cover_photo = $fullpath;
         $gallery->cover_photo_thumb = $fullpath_thumb;
-        $gallery->description = $description;
-        $gallery->tags = json_encode($tags);
-        $gallery->artists = json_encode($artists);
-        $gallery->languages = json_encode($languages);
         $gallery->image_gallery_thumbs = json_encode($thumbarr);
         $gallery->image_gallery_full = json_encode($imgarr);
 
