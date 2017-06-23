@@ -390,6 +390,18 @@ a:hover {
     height: 5px;
     background: #6086b7;
     transition: 0s width linear, 0.25s transform linear; }
+  .item-component:after {
+    content: "Now Viewing";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    font-weight: 300;
+    color: #FFF;
+    padding: 10px;
+    box-sizing: border-box;
+    transform: translateY(-100%);
+    transition: 0.25s all; }
   .item-component:hover:before {
     width: 100%;
     transition: width 1s linear, 0.25s transform linear; }
@@ -421,10 +433,14 @@ a:hover {
     transform: scale(1); } }
 
 .selected-main .selected {
-  animation: bounce 0.25s ease-in-out; }
+  animation: bounce 0.25s ease-in-out;
+  background: rgba(50, 65, 74, 0.47); }
 
 .selected-main:before {
   transform: translateY(-5px); }
+
+.selected-main:after {
+  transform: translateY(0); }
 
 .footer {
   background: #32414a;

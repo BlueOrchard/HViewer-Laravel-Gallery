@@ -556,6 +556,20 @@ a:hover{
         transition: 0s width linear, 0.25s transform linear;
     }
 
+    &:after{
+        content: "Now Viewing";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        font-weight: 300;
+        color: #FFF;
+        padding: 10px;
+        box-sizing: border-box;
+        transform: translateY(-100%);
+        transition: 0.25s all;
+    }
+
     &:hover{
         &:before{
             width: 100%;
@@ -605,10 +619,15 @@ a:hover{
 .selected-main{
     .selected{
         animation: bounce 0.25s ease-in-out;
+        background: rgba(50, 65, 74, 0.47);
     }
 
     &:before{
         transform: translateY(-5px);
+    }
+
+    &:after{
+        transform: translateY(0);
     }
 }
 
