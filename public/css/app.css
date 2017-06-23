@@ -294,13 +294,38 @@ a:hover {
     background: #647c8a; }
 
 .homepage {
-  padding: 10px;
-  background: #f3f3f3; }
+  background: #f3f3f3;
+  display: flex; }
+  .homepage .leftside {
+    width: calc(100% - 300px);
+    padding: 10px; }
+    .homepage .leftside h1 {
+      font-weight: 300;
+      margin: 0 0 10px;
+      border-bottom: 1px solid #DDD;
+      padding-bottom: 10px; }
+  .homepage .rightside {
+    width: 300px;
+    background: #e6e6e6;
+    border-left: 1px solid #DDD; }
 
 .holder {
   display: flex; }
   .holder .item-component {
     width: 20%; }
+
+.item-component {
+  padding: 0 5px; }
+  .item-component img {
+    width: 100%;
+    height: auto;
+    border: 1px solid #DDD;
+    display: block;
+    box-sizing: border-box; }
+  .item-component p {
+    padding: 5px 0px;
+    margin: 0 0 10px;
+    font-weight: 500; }
 
 .footer {
   background: #32414a;

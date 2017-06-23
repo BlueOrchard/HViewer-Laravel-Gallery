@@ -427,8 +427,26 @@ a:hover{
 }
 
 .homepage{
-    padding: $padding;
     background: $containerBg;
+    display: flex;
+
+    .leftside{
+        width: calc(100% - 300px);
+        padding: $padding;
+
+        h1{
+            font-weight: 300;
+            margin: 0 0 10px;
+            border-bottom: 1px solid #DDD;
+            padding-bottom: 10px;
+        }
+    }
+
+    .rightside{
+        width: 300px;
+        background: $leftBg;
+        border-left: 1px solid #DDD;
+    }
 }
 
 .holder{
@@ -440,7 +458,21 @@ a:hover{
 }
 
 .item-component{
-    
+    padding: 0 5px;
+
+    img{
+        width: 100%;
+        height: auto;
+        border: 1px solid #DDD;
+        display: block;
+        box-sizing: border-box;
+    }
+
+    p{
+        padding: 5px 0px;
+        margin: 0 0 10px;
+        font-weight: 500;
+    }
 }
 
 .footer{
