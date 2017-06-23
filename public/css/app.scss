@@ -449,7 +449,6 @@ a:hover{
         width: 300px;
         background: $leftBg;
         border-left: 1px solid #DDD;
-        padding: $padding;
 
         .readme{
             text-align: center;
@@ -471,6 +470,40 @@ a:hover{
             font-size: 12px;
             text-align: center;
             margin-top: 20px;
+        }
+
+        img{
+            width: 100%;
+            height: auto;
+            padding: $padding;
+            box-sizing: border-box;
+        }
+
+        .readmore{
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            background: #54a575;
+            color: #FFF;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            font-size: 16px;
+            margin: $margin;
+        }
+
+        .entry{
+            display: flex;
+            justify-content: flex-start;
+            padding: 10px;
+            font-size: 13px;
+            border-top: 1px solid #DDD;
+
+            span:first-child{
+                color: $linkColor;
+                font-weight: 500;
+                width: 100px;
+            }
         }
     }
 }
@@ -507,6 +540,16 @@ a:hover{
         box-sizing: border-box;
         font-weight: 300;
         padding: 5px 10px;
+    }
+
+    &:after{
+        content: "\F054";
+        display: inline-block;
+        font: normal normal normal 24px/1 "Material Design Icons";
+        font-size: inherit;
+        text-rendering: auto;
+        line-height: inherit;
+        -webkit-font-smoothing: antialiased;
     }
 }
 

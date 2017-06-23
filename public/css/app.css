@@ -308,8 +308,7 @@ a:hover {
   .homepage .rightside {
     width: 300px;
     background: #e6e6e6;
-    border-left: 1px solid #DDD;
-    padding: 10px; }
+    border-left: 1px solid #DDD; }
     .homepage .rightside .readme {
       text-align: center;
       margin-top: 20px; }
@@ -326,6 +325,32 @@ a:hover {
       font-size: 12px;
       text-align: center;
       margin-top: 20px; }
+    .homepage .rightside img {
+      width: 100%;
+      height: auto;
+      padding: 10px;
+      box-sizing: border-box; }
+    .homepage .rightside .readmore {
+      display: block;
+      text-align: center;
+      text-decoration: none;
+      background: #54a575;
+      color: #FFF;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 5px;
+      font-size: 16px;
+      margin: 10px; }
+    .homepage .rightside .entry {
+      display: flex;
+      justify-content: flex-start;
+      padding: 10px;
+      font-size: 13px;
+      border-top: 1px solid #DDD; }
+      .homepage .rightside .entry span:first-child {
+        color: #6086b7;
+        font-weight: 500;
+        width: 100px; }
 
 .holder {
   display: flex; }
@@ -353,6 +378,14 @@ a:hover {
     box-sizing: border-box;
     font-weight: 300;
     padding: 5px 10px; }
+  .item-component:after {
+    content: "\F054";
+    display: inline-block;
+    font: normal normal normal 24px/1 "Material Design Icons";
+    font-size: inherit;
+    text-rendering: auto;
+    line-height: inherit;
+    -webkit-font-smoothing: antialiased; }
 
 .footer {
   background: #32414a;
