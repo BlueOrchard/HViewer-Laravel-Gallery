@@ -380,6 +380,19 @@ a:hover {
     padding: 5px 10px;
     z-index: 1;
     backface-visibility: hidden; }
+  .item-component:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    margin: 0 5px;
+    height: 5px;
+    background: #6086b7;
+    transition: 0s all; }
+  .item-component:hover:before {
+    width: calc(100% - 10px);
+    transition: width 1s linear; }
   .item-component .hovered {
     position: absolute;
     top: 0;
@@ -397,6 +410,8 @@ a:hover {
     opacity: 0; }
     .item-component .hovered:hover {
       opacity: 1; }
+    .item-component .hovered:before {
+      display: none; }
   .item-component .selected {
     opacity: 1; }
 

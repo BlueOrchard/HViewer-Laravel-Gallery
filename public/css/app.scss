@@ -544,6 +544,25 @@ a:hover{
         backface-visibility: hidden;
     }
 
+    &:before{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0%;
+        margin: 0 5px;
+        height: 5px;
+        background: $linkColor;
+        transition: 0s all;
+    }
+
+    &:hover{
+        &:before{
+            width: calc(100% - 10px);
+            transition: width 1s linear;
+        }
+    }
+
     .hovered{
         position: absolute;
         top: 0;
@@ -562,6 +581,10 @@ a:hover{
 
         &:hover{
             opacity: 1;
+        }
+
+        &:before{
+            display: none;
         }
     }
 
