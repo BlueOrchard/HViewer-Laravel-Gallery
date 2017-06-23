@@ -9,5 +9,7 @@ class BrowseController extends Controller
 {
     public function index(){
         echo Input::get('q');
+
+        return view('browse-main');
     }
 }
