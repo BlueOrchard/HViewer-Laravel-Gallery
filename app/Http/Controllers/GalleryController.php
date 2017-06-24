@@ -45,6 +45,6 @@ class GalleryController extends Controller
 
         $fullGallery->image_gallery_full = json_decode($fullGallery->image_gallery_full);
 
-        return view('main-read', compact('fullGallery'));
+        return view('main-read', compact('quickGallery', 'fullGallery'));
     }
 }
