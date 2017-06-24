@@ -26,6 +26,7 @@
                 </div>
                 <p class="tooltip">Hover over an item to get more information on it.</p>
             </div>
+            <div class="rightsideloader"></div>
         </div>
         @include('layout.footer')
     </div>

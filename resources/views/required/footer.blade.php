@@ -10,12 +10,28 @@
                 $('.item-component').removeClass('selected-main');
                 $(this_data).addClass('selected-main');
 
-                $('.rightside').html('<img src="'+$(this_data).data('img')+'">'+
-                        '<div class="entry"><span>Name</span><span>'+$(this_data).data('title')+'</span></div>'+
-                        '<div class="entry"><span>Series</span></span><span>'+$(this_data).data('series')+'</span></div>'+
-                        '<div class="entry"><span>Date Added</span><span>'+$(this_data).data('date')+'</span></div>'+
-                        '<a class="readmore" href="/manga/'+$(this_data).data('slug')+'">More Information</a>'
-                        );
+                $('.rightsideloader').addClass('goleft');
+
+                $('<img src="'+$(this_data).data('img')+'">').on('load', function(){
+                    setTimeout(function() {
+                        $('.rightsideloader').removeClass('goleft');
+                    }, 500);
+
+                    var this_original = this;
+                    setTimeout(function() {
+                        $('.rightside').empty();
+
+                        $(this_original).appendTo('.rightside');
+                        $('.rightside').append(
+                            '<div class="entry"><span>Name</span><span>'+$(this_data).data('title')+'</span></div>'+
+                            '<div class="entry"><span>Series</span></span><span>'+$(this_data).data('series')+'</span></div>'+
+                            '<div class="entry"><span>Date Added</span><span>'+$(this_data).data('date')+'</span></div>'+
+                            '<a class="readmore" href="/manga/'+$(this_data).data('slug')+'">More Information</a>'
+                            );
+                    }, 250);
+                });
+
+
             }, 1000);
         }).mouseleave(function() {
             clearTimeout(timer);

@@ -428,7 +428,6 @@ a:hover{
 
 .homepage{
     background: $containerBg;
-    display: flex;
 
     .leftside{
         width: calc(100% - 300px);
@@ -444,11 +443,48 @@ a:hover{
             padding-bottom: 10px;
         }
     }
+    
+    .rightsideloader{
+        width: 300px;
+        background: $leftBg;
+        border-left: 1px solid #DDD;
+        position: fixed;
+        height: calc(100vh - #{$headerHeight});
+        margin-top: $headerHeight;
+        top: 0;
+        right: 0;
+        z-index: 1;
+        transition: 0.25s all;
+        transform: translateX(100%);
+
+        &:before{
+            content: "";
+            width: 50px;
+            height: 50px;
+            display: block;
+            top: 0;
+            left: 0;
+            margin: 20px auto;
+            border: 3px solid #DDD;
+            border-radius: 50px;
+            border-top: 3px solid #32414a;
+            animation: rotate 0.75s infinite linear;
+        }
+    }
+
+    .goleft{
+        transform: translateX(0%);
+    }
 
     .rightside{
         width: 300px;
         background: $leftBg;
         border-left: 1px solid #DDD;
+        position: fixed;
+        height: calc(100vh - #{$headerHeight});
+        margin-top: $headerHeight;
+        top: 0;
+        right: 0;
 
         .readme{
             text-align: center;
@@ -602,6 +638,16 @@ a:hover{
     }
 }
 
+@keyframes rotate{
+    0%{
+        transform: rotate(0deg);
+    }
+
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
 @keyframes bounce{
     0%{
         transform: scale(1);
@@ -612,7 +658,7 @@ a:hover{
     }
 
     100%{
-        transform: scale(1);
+        transform: scale(1)
     }
 }
 
@@ -634,4 +680,6 @@ a:hover{
 .footer{
     background: $darkContainerBg;
     min-height: 300px;
+    position: relative;
+    z-index: 100;
 }

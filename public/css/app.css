@@ -294,8 +294,7 @@ a:hover {
     background: #647c8a; }
 
 .homepage {
-  background: #f3f3f3;
-  display: flex; }
+  background: #f3f3f3; }
   .homepage .leftside {
     width: calc(100% - 300px); }
     .homepage .leftside .moreitems {
@@ -305,10 +304,41 @@ a:hover {
       margin: 0 0 10px;
       border-bottom: 1px solid #DDD;
       padding-bottom: 10px; }
+  .homepage .rightsideloader {
+    width: 300px;
+    background: #e6e6e6;
+    border-left: 1px solid #DDD;
+    position: fixed;
+    height: calc(100vh - 46px);
+    margin-top: 46px;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    transition: 0.25s all;
+    transform: translateX(100%); }
+    .homepage .rightsideloader:before {
+      content: "";
+      width: 50px;
+      height: 50px;
+      display: block;
+      top: 0;
+      left: 0;
+      margin: 20px auto;
+      border: 3px solid #DDD;
+      border-radius: 50px;
+      border-top: 3px solid #32414a;
+      animation: rotate 0.75s infinite linear; }
+  .homepage .goleft {
+    transform: translateX(0%); }
   .homepage .rightside {
     width: 300px;
     background: #e6e6e6;
-    border-left: 1px solid #DDD; }
+    border-left: 1px solid #DDD;
+    position: fixed;
+    height: calc(100vh - 46px);
+    margin-top: 46px;
+    top: 0;
+    right: 0; }
     .homepage .rightside .readme {
       text-align: center;
       margin-top: 20px; }
@@ -424,6 +454,12 @@ a:hover {
   .item-component .selected {
     opacity: 1; }
 
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
+
 @keyframes bounce {
   0% {
     transform: scale(1); }
@@ -444,4 +480,6 @@ a:hover {
 
 .footer {
   background: #32414a;
-  min-height: 300px; }
+  min-height: 300px;
+  position: relative;
+  z-index: 100; }
