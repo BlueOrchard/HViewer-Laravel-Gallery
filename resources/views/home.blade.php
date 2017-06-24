@@ -3,6 +3,12 @@
     <div class="content-with-nav">
         @include('layout.leftnav')
         <div class="homepage">
+            <div class="intro-header">
+                <div>
+                    <h1><b>H</b>Viewer</h1>
+                    <p>A PHP Laravel Image Gallery for Comics and Manga.</p>
+                </div>
+            </div>
             <div class="leftside">
                 <div class="moreitems">
                     <h1>Recently Added</h1>
