@@ -125,7 +125,7 @@ class UploadGalleryController extends Controller
         $fullGallery = new FullGallery();
 
         $fullGallery->relation = $gallery->id;
-        $fullGallery->image_gallery_full = json_encode($imgarr);
+        $fullGallery->image_gallery_full = $imgarr;
 
         $fullGallery->save();
 

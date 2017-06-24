@@ -41,9 +41,7 @@ class GalleryController extends Controller
                         ->first();
 
         $fullGallery = FullGallery::where('relation', $quickGallery->id)
-                        ->first();               
-
-        $fullGallery->image_gallery_full = json_decode($fullGallery->image_gallery_full);
+                        ->first();
 
         return view('main-read', compact('quickGallery', 'fullGallery'));
     }
