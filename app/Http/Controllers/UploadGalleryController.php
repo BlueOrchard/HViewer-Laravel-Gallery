@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Gallery;
+use App\FullGallery;
+use App\Series;
 use Image;
 use File;
 use ZipArchive;
@@ -17,9 +19,11 @@ class UploadGalleryController extends Controller
     public function zipCreate(Request $request){
         //Data strings
         //TODO replace the below values with the POST $request values
-        $title = "One Punch Man Chapter 10";
+        $title = "One Punch Man Chapter 13";
         $slug = str_slug($title, "-");
+
         $series = "One Punch Man";
+        $series_slug = str_slug($series);
 
         $description = "The seemingly ordinary and unimpressive Saitama has a rather unique hobby: being a hero. In order to pursue his childhood dream, he trained relentlessly for three years—and lost all of his hair in the process. Now, Saitama is incredibly powerful, so much so that no enemy is able to defeat him in battle. In fact, all it takes to defeat evildoers with just one punch has led to an unexpected problem—he is no longer able to enjoy the thrill of battling and has become quite bored.";
 
@@ -33,7 +37,7 @@ class UploadGalleryController extends Controller
         $gallery->name = $title;
         $gallery->slug = $slug;
         $gallery->series = $series;
-        $gallery->series_slug = str_slug($series);
+        $gallery->series_slug = $series_slug;
         $gallery->description = $description;
         $gallery->tags = json_encode($tags);
         $gallery->artists = json_encode($artists);
@@ -45,6 +49,17 @@ class UploadGalleryController extends Controller
         $gallery->image_gallery_full = "";
 
         $gallery->save();
+
+        //Create Series Entry in Series Table if not exists
+        $newSeries = Series::where('series_slug',  $series_slug)->first();
+        if(!$newSeries){
+            $createSeries = new Series();
+
+            $createSeries->series = $series;
+            $createSeries->series_slug = $series_slug;
+
+            $createSeries->save();
+        }
 
         //Initialize arrays for gallery
         $imgarr = [];
@@ -102,9 +117,17 @@ class UploadGalleryController extends Controller
         $gallery->cover_photo = $fullpath;
         $gallery->cover_photo_thumb = $fullpath_thumb;
         $gallery->image_gallery_thumbs = json_encode($thumbarr);
-        $gallery->image_gallery_full = json_encode($imgarr);
+        $gallery->image_gallery_full = "";
 
         $gallery->save();
+
+        //Full Gallery JSON to be saved in a different table
+        $fullGallery = new FullGallery();
+
+        $fullGallery->relation = $gallery->id;
+        $fullGallery->image_gallery_full = json_encode($imgarr);
+
+        $fullGallery->save();
 
         echo 'database entry created';
     }
