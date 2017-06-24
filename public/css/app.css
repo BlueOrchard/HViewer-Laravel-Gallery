@@ -20,9 +20,22 @@ a {
   text-decoration: none;
   color: #6086b7;
   transition: 0.25s all; }
+  a:hover {
+    color: #95b1d6; }
 
-a:hover {
-  color: #95b1d6; }
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
+
+@keyframes bounce {
+  0% {
+    transform: scale(1); }
+  50% {
+    transform: scale(1.5); }
+  100% {
+    transform: scale(1); } }
 
 .header {
   display: flex;
@@ -113,16 +126,22 @@ a:hover {
   .leftnav ul {
     margin: 0;
     list-style: none;
-    padding: 10px 15px; }
+    padding: 10px 0px; }
     .leftnav ul li {
-      padding: 10px 5px;
+      padding: 0;
       color: #FFF;
       font-size: 13px;
       text-align: center; }
+      .leftnav ul li a {
+        padding: 10px 0;
+        color: #FFF;
+        display: block;
+        margin-bottom: 2px; }
+        .leftnav ul li a:hover {
+          background: #647c8a; }
       .leftnav ul li span {
         display: block;
-        font-size: 25px;
-        margin-bottom: 2px; }
+        font-size: 25px; }
 
 .main-container {
   background: #e6e6e6;
@@ -453,20 +472,6 @@ a:hover {
       opacity: 1; }
   .item-component .selected {
     opacity: 1; }
-
-@keyframes rotate {
-  0% {
-    transform: rotate(0deg); }
-  100% {
-    transform: rotate(360deg); } }
-
-@keyframes bounce {
-  0% {
-    transform: scale(1); }
-  50% {
-    transform: scale(1.5); }
-  100% {
-    transform: scale(1); } }
 
 .selected-main .selected {
   animation: bounce 0.25s ease-in-out;

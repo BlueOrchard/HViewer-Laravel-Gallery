@@ -49,10 +49,34 @@ a{
     text-decoration: none;
     color: $linkColor;
     transition: 0.25s all;
+
+    &:hover{
+        color: $linkColorHover;
+    }
 }
 
-a:hover{
-    color: $linkColorHover;
+@keyframes rotate{
+    0%{
+        transform: rotate(0deg);
+    }
+
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes bounce{
+    0%{
+        transform: scale(1);
+    }
+
+    50%{
+        transform: scale(1.5);
+    }
+
+    100%{
+        transform: scale(1)
+    }
 }
 
 .header{
@@ -166,18 +190,28 @@ a:hover{
     ul{
         margin: 0;
         list-style: none;
-        padding: 10px 15px;
+        padding: 10px 0px;
 
         li {
-            padding: 10px 5px;
+            padding: 0;
             color: #FFF;
             font-size: 13px;
             text-align: center;
 
+            a{
+                padding: 10px 0;
+                color: #FFF;
+                display: block;
+                margin-bottom: 2px;
+
+                &:hover{
+                    background: $darkContainerHoverBg;
+                }
+            }
+
             span{
                 display: block;
                 font-size: 25px;
-                margin-bottom: 2px;
             }
         }
     }
@@ -467,7 +501,7 @@ a:hover{
             margin: 20px auto;
             border: 3px solid #DDD;
             border-radius: 50px;
-            border-top: 3px solid #32414a;
+            border-top: 3px solid $darkContainerBg;
             animation: rotate 0.75s infinite linear;
         }
     }
@@ -635,30 +669,6 @@ a:hover{
 
     .selected{
         opacity: 1;
-    }
-}
-
-@keyframes rotate{
-    0%{
-        transform: rotate(0deg);
-    }
-
-    100%{
-        transform: rotate(360deg);
-    }
-}
-
-@keyframes bounce{
-    0%{
-        transform: scale(1);
-    }
-
-    50%{
-        transform: scale(1.5);
-    }
-
-    100%{
-        transform: scale(1)
     }
 }
 
