@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Gallery;
+use App\FullGallery;
 
 class GalleryController extends Controller
 {
@@ -35,9 +36,12 @@ class GalleryController extends Controller
     }
 
     public function read($slug){
-        $fullGallery = Gallery::where('slug', $slug)
-                        ->get(['name', 'slug', 'image_gallery_full'])
+        $quickGallery = Gallery::where('slug', $slug)
+                        ->get(['id', 'name', 'slug'])
                         ->first();
+
+        $fullGallery = FullGallery::where('relation', $quickGallery->id)
+                        ->first();               
 
         $fullGallery->image_gallery_full = json_decode($fullGallery->image_gallery_full);
 
