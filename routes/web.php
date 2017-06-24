@@ -30,13 +30,13 @@ Route::post('add-manga', ['uses' => 'UploadGalleryController@zipCreate']);
 //Homepage Route
 Route::get('/', ['uses' => 'HomepageController@index']);
 
-//Archive routes for linear browsing
-Route::get('archive/', ['uses' => 'ArchiveController@index']);
-Route::get('archive/page/{num}', ['uses' => 'ArchiveController@index']);
+//Series routes for linear browsing
+Route::get('series/{slug}', ['uses' => 'SeriesController@index']);
+Route::get('series/{slug}/page/{num}', ['uses' => 'SeriesController@index']);
 
 //Search and filter routes. Possibly merge these two routes together.
 Route::get('search/', ['uses' => 'BrowseController@index']);
-Route::get('filter/', ['uses' => 'BrowseController@index']);
+Route::get('browse/', ['uses' => 'BrowseController@index']);
 
 
 /* --- INCOMPLETE ROUTES --- */

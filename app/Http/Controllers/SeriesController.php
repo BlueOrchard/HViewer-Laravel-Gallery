@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class ArchiveController extends Controller
+class SeriesController extends Controller
 {
     public function index(){
-        return view('archive-full');
+        return view('series-main');
     }
 }

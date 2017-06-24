@@ -49,7 +49,7 @@
             <div class="fifty-container smaller">
                 <h3>Series</h3>
                 <ul>
-                    <li>{{ $generalData->series }}</li>
+                    <li><a href="/series/{{ $generalData->series_slug }}">{{ $generalData->series }}</a></li>
                 </ul>
 
                 <h3>Categories</h3>
