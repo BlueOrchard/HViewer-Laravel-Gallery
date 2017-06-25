@@ -10,6 +10,9 @@
                 </div>
             </div>
             <div class="leftside">
+                <div class="userinfo">
+                    @include('templates.user.profile-snippet')
+                </div>
                 <div class="moreitems">
                     <h1>Recently Added</h1>
                     <div class="holder">
