@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Gallery;
 use App\FullGallery;
 use App\Series;
+use App\Tags;
 use Image;
 use File;
 use ZipArchive;
@@ -59,6 +60,19 @@ class UploadGalleryController extends Controller
             $createSeries->series_slug = $series_slug;
 
             $createSeries->save();
+        }
+
+        //Create Tag entries in Tags table if not exists
+        foreach($tags as $tag){
+            $newTags = Tags::where('tag_name', $tag)->first();
+            if(!$newTags){
+                $createTag = new Tags();
+
+                $createTag->tag_name = $tag;
+                $createTag->tag_slug = str_slug($tag);
+
+                $createTag->save();
+            }
         }
 
         //Initialize arrays for gallery
