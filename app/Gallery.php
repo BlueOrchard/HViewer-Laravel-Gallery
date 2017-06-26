@@ -39,4 +39,8 @@ class Gallery extends Model
     public function getLanguagesAttribute(){
         return json_decode($this->attributes['languages']);
     }
+
+    public function getCreatedAtAttribute(){
+        return date('F d, Y', strtotime($this->attributes['created_at']));
+    }
 }
