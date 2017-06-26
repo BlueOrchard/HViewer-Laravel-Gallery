@@ -6,14 +6,16 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 
 use App\Tags;
+use App\Gallery;
 
 class BrowseController extends Controller
 {
     public function index(){
         echo Input::get('q');
 
-        $allTags = Tags::get();
+        $allTags = Tags::orderBy('tag_name')->get();
+        $filteredPosts = Gallery::latest()->get();
 
-        return view('browse-main', compact('allTags'));
+        return view('browse-main', compact('allTags', 'filteredPosts'));
     }
 }
