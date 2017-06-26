@@ -599,7 +599,7 @@ a{
 .item-component{
     margin: 0 5px;
     position: relative;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     overflow: hidden;
 
     img{
@@ -871,6 +871,7 @@ a{
 .filtered-items{
     display: flex;
     flex-flow: wrap;
+    margin: 0 -5px;
 
     .item-component{
         display: block;

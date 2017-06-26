@@ -417,7 +417,7 @@ a {
 .item-component {
   margin: 0 5px;
   position: relative;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   overflow: hidden; }
   .item-component img {
     width: 100%;
@@ -619,7 +619,8 @@ a {
 
 .filtered-items {
   display: flex;
-  flex-flow: wrap; }
+  flex-flow: wrap;
+  margin: 0 -5px; }
   .filtered-items .item-component {
     display: block;
     width: calc(20% - 10px); }
