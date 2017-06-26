@@ -460,14 +460,14 @@ a{
     }
 }
 
-.homepage{
+.homepage, .browse{
     background: $containerBg;
 
     .leftside{
         width: calc(100% - 300px);
         display: flex;
 
-        .userinfo{
+        .userinfo, .browseinfo{
             width: 300px;
             background: $leftBg;
             border-right: 1px solid #DDD;

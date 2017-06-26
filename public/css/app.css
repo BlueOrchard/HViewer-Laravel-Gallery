@@ -312,25 +312,25 @@ a {
   .upload-form button:hover {
     background: #647c8a; }
 
-.homepage {
+.homepage, .browse {
   background: #f3f3f3; }
-  .homepage .leftside {
+  .homepage .leftside, .browse .leftside {
     width: calc(100% - 300px);
     display: flex; }
-    .homepage .leftside .userinfo {
+    .homepage .leftside .userinfo, .homepage .leftside .browseinfo, .browse .leftside .userinfo, .browse .leftside .browseinfo {
       width: 300px;
       background: #e6e6e6;
       border-right: 1px solid #DDD; }
-    .homepage .leftside .moreitems {
+    .homepage .leftside .moreitems, .browse .leftside .moreitems {
       padding: 10px 15px;
       width: calc(100% - 300px); }
-    .homepage .leftside h1 {
+    .homepage .leftside h1, .browse .leftside h1 {
       font-weight: 300;
       margin: 0 0 10px;
       border-bottom: 1px solid #DDD;
       padding-bottom: 5px;
       font-size: 20px; }
-  .homepage .rightsideloader {
+  .homepage .rightsideloader, .browse .rightsideloader {
     width: 300px;
     background: #e6e6e6;
     border-left: 1px solid #DDD;
@@ -342,7 +342,7 @@ a {
     z-index: 1;
     transition: 0.25s all;
     transform: translateX(100%); }
-    .homepage .rightsideloader:before {
+    .homepage .rightsideloader:before, .browse .rightsideloader:before {
       content: "";
       width: 50px;
       height: 50px;
@@ -354,9 +354,9 @@ a {
       border-radius: 50px;
       border-top: 3px solid #32414a;
       animation: rotate 0.75s infinite linear; }
-  .homepage .goleft {
+  .homepage .goleft, .browse .goleft {
     transform: translateX(0%); }
-  .homepage .rightside {
+  .homepage .rightside, .browse .rightside {
     width: 300px;
     background: #e6e6e6;
     border-left: 1px solid #DDD;
@@ -365,10 +365,10 @@ a {
     margin-top: 46px;
     top: 0;
     right: 0; }
-    .homepage .rightside .readme {
+    .homepage .rightside .readme, .browse .rightside .readme {
       text-align: center;
       margin-top: 40px; }
-      .homepage .rightside .readme span {
+      .homepage .rightside .readme span, .browse .rightside .readme span {
         display: inline-block;
         font-size: 60px;
         background: #32414a;
@@ -377,16 +377,16 @@ a {
         height: 100px;
         line-height: 100px;
         border-radius: 50px; }
-    .homepage .rightside .tooltip {
+    .homepage .rightside .tooltip, .browse .rightside .tooltip {
       font-size: 12px;
       text-align: center;
       margin-top: 20px; }
-    .homepage .rightside img {
+    .homepage .rightside img, .browse .rightside img {
       width: 100%;
       height: auto;
       padding: 10px;
       box-sizing: border-box; }
-    .homepage .rightside .readmore {
+    .homepage .rightside .readmore, .browse .rightside .readmore {
       display: block;
       text-align: center;
       text-decoration: none;
@@ -397,13 +397,13 @@ a {
       border-radius: 5px;
       font-size: 16px;
       margin: 10px; }
-    .homepage .rightside .entry {
+    .homepage .rightside .entry, .browse .rightside .entry {
       display: flex;
       justify-content: flex-start;
       padding: 10px;
       font-size: 13px;
       border-top: 1px solid #DDD; }
-      .homepage .rightside .entry span:first-child {
+      .homepage .rightside .entry span:first-child, .browse .rightside .entry span:first-child {
         color: #6086b7;
         font-weight: 500;
         width: 100px; }
