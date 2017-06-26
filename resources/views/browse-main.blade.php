@@ -5,7 +5,18 @@
         <div class="browse">
             <div class="leftside">
                 <div class="browseinfo">
-                    @include('templates.user.profile-snippet')
+                    <h1>Filter</h1>
+
+                    <form method="get">
+                        <h4>Tags</h4>
+                        @foreach($allTags as $tag)
+                            <input type="checkbox" name="tags" value="{{ $tag->tag_slug }}">
+                                {{ $tag->tag_name }}
+                            </input>
+                        @endforeach
+
+                        <button type="submit">Submit</button>
+                    </form>
                 </div>
                 <div class="moreitems">
                     <h1>Browse</h1>
