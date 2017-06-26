@@ -8,6 +8,18 @@
                     <h1>Filter</h1>
 
                     <form class="sort-form" method="get">
+                        <h4>Language</h4>
+                        <div class="language">
+                            <label>
+                                <input type="radio" name="language" value="English">
+                                English
+                            </label>
+                            <label>
+                                <input type="radio" name="language" value="Japanese">
+                                Japanese
+                            </label>
+                        </div>
+
                         <h4>Tags</h4>
                         <div class="tags">
                             @foreach($allTags as $tag)
@@ -18,6 +30,13 @@
                                 </label>
                             @endforeach
                         </div>
+
+                        <h4>Artist Name</h4>
+                        <div class="artist">
+                            <input name="artist" placeholder="Artist Name"></input>
+                        </div>
+
+                        <div class="divider"></div>
 
                         <button type="submit">Submit</button>
                     </form>

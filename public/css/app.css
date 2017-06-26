@@ -581,14 +581,41 @@ a {
   color: #6086b7; }
 
 .sort-form div {
-  margin-bottom: 10px; }
+  margin-bottom: 15px; }
 
-.sort-form .tags {
+.sort-form button {
+  font-family: 'Roboto', sans-serif;
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-weight: 500;
+  padding: 10px;
+  color: #FFF;
+  background: #32414a;
+  border: 0;
+  border-radius: 3px;
+  outline: 0;
+  cursor: pointer; }
+
+.sort-form .tags, .sort-form .language {
   display: flex;
   flex-flow: wrap; }
-  .sort-form .tags label {
+  .sort-form .tags label, .sort-form .language label {
     display: block;
     width: 50%; }
+
+.sort-form .artist input {
+  width: 100%;
+  background: #f3f3f3;
+  border: 1px solid #DDD;
+  padding: 5px;
+  box-sizing: border-box;
+  border-radius: 3px;
+  outline: 0; }
+
+.sort-form .divider {
+  border-top: 1px solid #DDD;
+  margin: 15px 0; }
 
 .filtered-items {
   display: flex;
