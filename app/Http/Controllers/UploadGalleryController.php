@@ -39,9 +39,9 @@ class UploadGalleryController extends Controller
         $gallery->series = $series;
         $gallery->series_slug = $series_slug;
         $gallery->description = $description;
-        $gallery->tags = json_encode($tags);
-        $gallery->artists = json_encode($artists);
-        $gallery->languages = json_encode($languages);
+        $gallery->tags = $tags;
+        $gallery->artists = $artists;
+        $gallery->languages = $languages;
         //Assigning default values for database creation
         $gallery->cover_photo = "";
         $gallery->cover_photo_thumb = "";
@@ -116,7 +116,7 @@ class UploadGalleryController extends Controller
         //Add image paths to database
         $gallery->cover_photo = $fullpath;
         $gallery->cover_photo_thumb = $fullpath_thumb;
-        $gallery->image_gallery_thumbs = json_encode($thumbarr);
+        $gallery->image_gallery_thumbs = $thumbarr;
         $gallery->image_gallery_full = "";
 
         $gallery->save();

@@ -14,22 +14,9 @@ class GalleryController extends Controller
         $generalData = Gallery::where('slug', $slug)->first();
 
         if($generalData->tags){
-            $generalData->tags = json_decode($generalData->tags);
             $relatedArray = Gallery::where('tags', 'LIKE', '%'.$generalData->tags[0].'%')
                                     ->limit(5)
                                     ->get(['name', 'slug', 'cover_photo_thumb']);
-        }
-
-        if($generalData->artists){
-            $generalData->artists = json_decode($generalData->artists);
-        }
-
-        if($generalData->languages){
-            $generalData->languages = json_decode($generalData->languages);
-        }
-        
-        if($generalData->image_gallery_thumbs){
-            $generalData->image_gallery_thumbs = json_decode($generalData->image_gallery_thumbs);
         }
 
         return view('main-description', compact('generalData', 'relatedArray'));
