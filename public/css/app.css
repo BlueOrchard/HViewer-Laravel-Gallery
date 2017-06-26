@@ -572,6 +572,31 @@ a {
       width: 100%;
       font-size: 12px; }
 
+.browseinfo {
+  padding: 10px; }
+
+.sort-form h4 {
+  margin: 0 0 10px;
+  font-weight: 500;
+  color: #6086b7; }
+
+.sort-form div {
+  margin-bottom: 10px; }
+
+.sort-form .tags {
+  display: flex;
+  flex-flow: wrap; }
+  .sort-form .tags label {
+    display: block;
+    width: 50%; }
+
+.filtered-items {
+  display: flex;
+  flex-flow: wrap; }
+  .filtered-items .item-component {
+    display: block;
+    width: calc(20% - 10px); }
+
 .footer {
   background: #32414a;
   min-height: 300px;

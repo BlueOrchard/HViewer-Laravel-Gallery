@@ -7,19 +7,28 @@
                 <div class="browseinfo">
                     <h1>Filter</h1>
 
-                    <form method="get">
+                    <form class="sort-form" method="get">
                         <h4>Tags</h4>
-                        @foreach($allTags as $tag)
-                            <input type="checkbox" name="tags" value="{{ $tag->tag_slug }}">
-                                {{ $tag->tag_name }}
-                            </input>
-                        @endforeach
+                        <div class="tags">
+                            @foreach($allTags as $tag)
+                                <label>
+                                    <input type="checkbox" name="tags" value="{{ $tag->tag_slug }}">
+                                        {{ $tag->tag_name }}
+                                    </input>
+                                </label>
+                            @endforeach
+                        </div>
 
                         <button type="submit">Submit</button>
                     </form>
                 </div>
                 <div class="moreitems">
                     <h1>Browse</h1>
+                    <div class="filtered-items">
+                        @foreach($filteredPosts as $item)
+                            @include('templates.nav-item')
+                        @endforeach
+                    </div>
                 </div>
             </div>
             <div class="rightside">

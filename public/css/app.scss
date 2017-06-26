@@ -808,6 +808,43 @@ a{
     }
 }
 
+.browseinfo{
+    padding: $padding;
+}
+
+.sort-form{
+
+    h4{
+        margin: 0 0 10px;
+        font-weight: 500;
+        color: $linkColor;
+    }
+
+    div{
+        margin-bottom: 10px;
+    }
+
+    .tags{
+        display: flex;
+        flex-flow: wrap;
+
+        label{
+            display: block;
+            width: 50%;
+        }
+    }
+}
+
+.filtered-items{
+    display: flex;
+    flex-flow: wrap;
+
+    .item-component{
+        display: block;
+        width: calc(20% - 10px);
+    }
+}
+
 .footer{
     background: $darkContainerBg;
     min-height: 300px;
