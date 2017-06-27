@@ -38,6 +38,26 @@
         }).mouseleave(function() {
             clearTimeout(timer);
         });
+
+        if(window.query){
+            if(query.query){
+                $('input[name=q]').val(query.query);
+            }
+
+            if(query.language){
+                $('input[value='+query.language+']').prop("checked", true);
+            }
+
+            if(query.tags){
+                for(i = 0; i < query.tags.length; i++){
+                    $('input[value='+query.tags[i]+']').prop("checked", true);
+                }
+            }
+
+            if(query.artist){
+                $('input[name=artist]').val(query.artist);
+            }
+        }
     </script>
     </body>
 </html>
