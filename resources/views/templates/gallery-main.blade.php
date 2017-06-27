@@ -54,21 +54,21 @@
 
                 <h3>Categories</h3>
                 <ul>
-                    @foreach($generalData->tags as $tag)
+                    @foreach($seriesData->tags as $tag)
                         <li>{{ $tag }}</li>
                     @endforeach
                 </ul>
 
                 <h3>Artists</h3>
                 <ul>
-                    @foreach($generalData->artists as $artist)
+                    @foreach($seriesData->artists as $artist)
                         <li>{{ $artist }}</li>
                     @endforeach
                 </ul>
 
                 <h3>Languages</h3>
                 <ul>
-                    @foreach($generalData->languages as $language)
+                    @foreach($seriesData->languages as $language)
                         <li>{{ $language }}</li>
                     @endforeach
                 </ul>
