@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Gallery;
 use App\FullGallery;
+use App\Series;
 
 class GalleryController extends Controller
 {
@@ -13,13 +14,16 @@ class GalleryController extends Controller
 
         $generalData = Gallery::where('slug', $slug)->first();
 
-        if($generalData->tags){
-            $relatedArray = Gallery::where('tags', 'LIKE', '%'.$generalData->tags[0].'%')
+        $seriesData = Series::where('series_slug', $generalData->series_slug)->first();
+
+        if($seriesData->tags){
+            $relatedArray = Series::where('tags', 'LIKE', '%'.$seriesData->tags[0].'%')
                                     ->limit(5)
-                                    ->get(['name', 'slug', 'cover_photo_thumb']);
+                                    ->get(['series', 'series_slug', 'cover_photo_thumb']);
         }
 
-        return view('main-description', compact('generalData', 'relatedArray'));
+
+        return view('main-description', compact('generalData', 'relatedArray', 'seriesData'));
     }
 
     public function read($slug){

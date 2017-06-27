@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Input;
 
 use App\Tags;
 use App\Gallery;
+use App\Series;
 
 class BrowseController extends Controller
 {
@@ -14,7 +15,7 @@ class BrowseController extends Controller
         echo Input::get('q');
 
         $allTags = Tags::orderBy('tag_name')->get();
-        $filteredPosts = Gallery::latest()->get();
+        $filteredPosts = Series::latest()->get();
 
         return view('browse-main', compact('allTags', 'filteredPosts'));
     }
