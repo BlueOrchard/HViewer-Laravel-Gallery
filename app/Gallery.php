@@ -16,7 +16,8 @@ class Gallery extends Model
         return json_decode($this->attributes['image_gallery_thumbs']);
     }
 
-    //JSON encode/decode tags
+    /* DEPRECATED: MOVING OVER TO SERIES DB TABLE */
+    /* //JSON encode/decode tags
     public function setTagsAttribute($value){
          $this->attributes['tags'] = json_encode($value);
     }
@@ -38,9 +39,13 @@ class Gallery extends Model
     }
     public function getLanguagesAttribute(){
         return json_decode($this->attributes['languages']);
-    }
+    } */
 
+    //Properly formatted dates
     public function getCreatedAtAttribute(){
         return date('F d, Y', strtotime($this->attributes['created_at']));
+    }
+    public function getUpdatedAtAttribute(){
+        return date('F d, Y', strtotime($this->attributes['updated_at']));
     }
 }
