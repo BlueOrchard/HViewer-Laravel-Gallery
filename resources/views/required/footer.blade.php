@@ -45,12 +45,12 @@
             }
 
             if(query.language){
-                $('input[value='+query.language+']').prop("checked", true);
+                $('input[value="'+query.language+'"]').prop("checked", true);
             }
 
             if(query.tags){
                 for(i = 0; i < query.tags.length; i++){
-                    $('input[value='+query.tags[i]+']').prop("checked", true);
+                    $('input[value="'+query.tags[i]+'"]').prop("checked", true);
                 }
             }
 
