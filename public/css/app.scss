@@ -812,6 +812,12 @@ a{
     padding: $padding;
 }
 
+.browse{
+    .moreitems{
+        min-height: calc(100vh - #{$headerHeight});
+    }
+}
+
 .sort-form{
 
     h4{

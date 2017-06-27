@@ -575,6 +575,9 @@ a {
 .browseinfo {
   padding: 10px; }
 
+.browse .moreitems {
+  min-height: calc(100vh - 46px); }
+
 .sort-form h4 {
   margin: 0 0 10px;
   font-weight: 500;
