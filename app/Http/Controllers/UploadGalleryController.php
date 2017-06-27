@@ -20,15 +20,15 @@ class UploadGalleryController extends Controller
     public function zipCreate(Request $request){
         //Data strings
         //TODO replace the below values with the POST $request values
-        $title = "One Punch Man Chapter 13";
+        $title = "One Punch Man Chapter 4";
         $slug = str_slug($title, "-");
 
-        $series = "One Punch Man";
+        $series = "Test Series";
         $series_slug = str_slug($series);
 
         $description = "The seemingly ordinary and unimpressive Saitama has a rather unique hobby: being a hero. In order to pursue his childhood dream, he trained relentlessly for three years—and lost all of his hair in the process. Now, Saitama is incredibly powerful, so much so that no enemy is able to defeat him in battle. In fact, all it takes to defeat evildoers with just one punch has led to an unexpected problem—he is no longer able to enjoy the thrill of battling and has become quite bored.";
 
-        $tags = ["Action", "Sci-Fi", "Comedy", "Parody", "Super Power", "Supernatural", "Seinen"];
+        $tags = ["Action", "Comedy", "Parody", "Super Power", "Supernatural", "Seinen"];
         $artists = ["Murata, Yusuke", "ONE"];
         $languages = ["English"];
 

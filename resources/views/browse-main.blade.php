@@ -7,7 +7,12 @@
                 <div class="browseinfo">
                     <h1>Filter</h1>
 
-                    <form class="sort-form" method="get">
+                    <script>
+                        var query = JSON.parse('{!! $JSONQuery !!}');
+                        console.log(query);
+                    </script>
+
+                    <form class="sort-form" action="/browse/" method="get">
                         <h4>Language</h4>
                         <div class="language">
                             <label>
@@ -24,7 +29,7 @@
                         <div class="tags">
                             @foreach($allTags as $tag)
                                 <label>
-                                    <input type="checkbox" name="tags" value="{{ $tag->tag_slug }}">
+                                    <input type="checkbox" name="tags[]" value="{{ $tag->tag_name }}">
                                         {{ $tag->tag_name }}
                                     </input>
                                 </label>

@@ -12,11 +12,35 @@ use App\Series;
 class BrowseController extends Controller
 {
     public function index(){
-        echo Input::get('q');
+        $query     = Input::get('q');
+        $language  = Input::get('language');
+        $tags      = Input::get('tags');
+        $artist    = Input::get('artist');
+
+        if($query){
+            $filteredPosts = Series::where('series', 'LIKE', '%'.$query.'%')
+                             ->latest()
+                             ->get();
+        } else {
+            $filteredPosts = Series::where('languages', 'LIKE', '%'.$language.'%')
+                            ->where('artists', 'LIKE', '%'.$artist.'%')
+                            ->where(function($q) use ($tags){
+                                if($tags){
+                                    foreach($tags as $tag){
+                                        $q->where('tags', 'LIKE', '%'.$tag.'%');
+                                    }
+                                }
+                            })
+                            ->latest()
+                            ->get();
+        }
 
         $allTags = Tags::orderBy('tag_name')->get();
-        $filteredPosts = Series::latest()->get();
-
-        return view('browse-main', compact('allTags', 'filteredPosts'));
+        $JSONQuery = json_encode(['query' => $query,
+                      'language' => $language,
+                      'tags' => $tags,
+                      'artist' => $artist]);
+ 
+        return view('browse-main', compact('allTags', 'filteredPosts', 'JSONQuery'));
     }
 }
