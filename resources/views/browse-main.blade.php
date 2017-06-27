@@ -9,7 +9,6 @@
 
                     <script>
                         var query = JSON.parse('{!! $JSONQuery !!}');
-                        console.log(query);
                     </script>
 
                     <form class="sort-form" action="/browse/" method="get">

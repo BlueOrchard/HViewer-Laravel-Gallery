@@ -272,6 +272,10 @@ a{
             border-top: 1px solid #DDD;
             font-size: 13px;
 
+            a{
+                color: $mainColor;
+            }
+
             span{
                 display: block;
                 width: 50%;
@@ -339,6 +343,10 @@ a{
 
             .smaller{
                 width: 25%;
+
+                a{
+                    color: $mainColor;
+                }
             }
         }
 
@@ -370,6 +378,7 @@ a{
                     font-weight: 300;
                     padding: 10px 10px;
                     box-sizing: border-box;
+                    width: calc(100% - 6px);
                 }
             }
         }

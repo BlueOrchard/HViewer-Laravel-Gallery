@@ -183,6 +183,8 @@ a {
       padding: 10px;
       border-top: 1px solid #DDD;
       font-size: 13px; }
+      .main-container .leftside .mini-data a {
+        color: #6b6b6b; }
       .main-container .leftside .mini-data span {
         display: block;
         width: 50%; }
@@ -226,6 +228,8 @@ a {
         width: 75%; }
       .main-container .rightside .split-two .smaller {
         width: 25%; }
+        .main-container .rightside .split-two .smaller a {
+          color: #6b6b6b; }
     .main-container .rightside .related, .main-container .rightside .preview {
       display: flex;
       justify-content: flex-start;
@@ -249,7 +253,8 @@ a {
           color: #FFF;
           font-weight: 300;
           padding: 10px 10px;
-          box-sizing: border-box; }
+          box-sizing: border-box;
+          width: calc(100% - 6px); }
 
 .content-with-nav {
   overflow: auto;

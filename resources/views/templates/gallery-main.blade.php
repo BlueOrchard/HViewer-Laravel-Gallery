@@ -9,7 +9,7 @@
         </a>
         <div class="mini-data">
             <span>Series</span>
-            <span>{{ $generalData->series }}</span>
+            <span><a href="/series/{{ $generalData->series_slug }}">{{ $generalData->series }}</a></span>
         </div>
         <div class="mini-data">
             <span>Date Added</span>
@@ -31,7 +31,7 @@
                 <div class="preview">
                     @foreach($generalData->image_gallery_thumbs as $imagethumb)
                     <div>
-                        <img src="{{ url($imagethumb) }}">
+                        <a href="{{ $generalData->slug }}/read"><img src="{{ url($imagethumb) }}"></a>
                     </div>
                     @endforeach
                 </div>
@@ -40,8 +40,10 @@
                 <div class="related">
                     @foreach($relatedArray as $related)
                         <div>
-                            <img src="{{ url($related->cover_photo_thumb) }}">
-                            <span>{{ $related->name }}</span>
+                            <a href="/series/{{ $related->series_slug }}">
+                                <img src="{{ url($related->cover_photo_thumb) }}">
+                                <span>{{ $related->series }}</span>
+                            </a>
                         </div>
                     @endforeach
                 </div>
@@ -55,21 +57,21 @@
                 <h3>Categories</h3>
                 <ul>
                     @foreach($seriesData->tags as $tag)
-                        <li>{{ $tag }}</li>
+                        <li><a href="/browse?tags%5B%5D={{ urlencode($tag) }}">{{ $tag }}</a></li>
                     @endforeach
                 </ul>
 
                 <h3>Artists</h3>
                 <ul>
                     @foreach($seriesData->artists as $artist)
-                        <li>{{ $artist }}</li>
+                        <li><a href="/browse?artist={{ urlencode($artist) }}">{{ $artist }}</a></li>
                     @endforeach
                 </ul>
 
                 <h3>Languages</h3>
                 <ul>
                     @foreach($seriesData->languages as $language)
-                        <li>{{ $language }}</li>
+                        <li><a href="browse?language={{ urlencode($language) }}">{{ $language }}</a></li>
                     @endforeach
                 </ul>
             </div>
