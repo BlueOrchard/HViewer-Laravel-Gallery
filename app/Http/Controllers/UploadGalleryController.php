@@ -39,10 +39,17 @@ class UploadGalleryController extends Controller
         $gallery->slug = $slug;
         $gallery->series = $series;
         $gallery->series_slug = $series_slug;
+
+        //Gallery should also have its own description as well
         $gallery->description = $description;
-        $gallery->tags = $tags;
-        $gallery->artists = $artists;
-        $gallery->languages = $languages;
+        
+        /* Moving this over to Series DB table (code at the bottom)
+            $gallery->description = $description;
+            $gallery->tags = $tags;
+            $gallery->artists = $artists;
+            $gallery->languages = $languages;
+        */
+
         //Assigning default values for database creation
         $gallery->cover_photo = "";
         $gallery->cover_photo_thumb = "";
@@ -50,30 +57,6 @@ class UploadGalleryController extends Controller
         $gallery->image_gallery_full = "";
 
         $gallery->save();
-
-        //Create Series Entry in Series Table if not exists
-        $newSeries = Series::where('series_slug',  $series_slug)->first();
-        if(!$newSeries){
-            $createSeries = new Series();
-
-            $createSeries->series = $series;
-            $createSeries->series_slug = $series_slug;
-
-            $createSeries->save();
-        }
-
-        //Create Tag entries in Tags table if not exists
-        foreach($tags as $tag){
-            $newTags = Tags::where('tag_name', $tag)->first();
-            if(!$newTags){
-                $createTag = new Tags();
-
-                $createTag->tag_name = $tag;
-                $createTag->tag_slug = str_slug($tag);
-
-                $createTag->save();
-            }
-        }
 
         //Initialize arrays for gallery
         $imgarr = [];
@@ -142,6 +125,46 @@ class UploadGalleryController extends Controller
         $fullGallery->image_gallery_full = $imgarr;
 
         $fullGallery->save();
+
+        //Create Series Entry in Series Table if not exists
+        //If it exists, assign new thumbnail. <- this might change in the future
+        //once admin panel is done.
+        $newSeries = Series::where('series_slug',  $series_slug)->first();
+        if(!$newSeries){
+            $createSeries = new Series();
+
+            $createSeries->cover_photo = $fullpath;
+            $createSeries->cover_photo_thumb = $fullpath_thumb;
+
+            $createSeries->series = $series;
+            $createSeries->series_slug = $series_slug;
+
+            $createSeries->description = $description;
+            $createSeries->tags = $tags;
+            $createSeries->artists = $artists;
+            $createSeries->languages = $languages;
+
+            $createSeries->save();
+        } else {
+            $newSeries->cover_photo = $fullpath;
+            $newSeries->cover_photo_thumb = $fullpath_thumb;
+
+            $newSeries->save();
+        }
+
+        //Create Tag entries in Tags table if not exists
+        foreach($tags as $tag){
+            $newTags = Tags::where('tag_name', $tag)->first();
+            if(!$newTags){
+                $createTag = new Tags();
+
+                $createTag->tag_name = $tag;
+                $createTag->tag_slug = str_slug($tag);
+
+                $createTag->save();
+            }
+        }
+
 
         echo 'database entry created';
     }
